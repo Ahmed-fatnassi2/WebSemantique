@@ -1,0 +1,2056 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:owl="http://www.w3.org/2002/07/owl#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+   xmlns:sg="http://www.esprit.tn/ontologies/smartgrid#"
+>
+  <rdf:Description rdf:nodeID="Nca169d6d40e74b1b997f4d9e7875128f">
+    <rdf:first rdf:resource="http://www.esprit.tn/ontologies/smartgrid#SourceProduction"/>
+    <rdf:rest rdf:nodeID="Ncb68715b90514f98be50eaa8a97371a0"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nf27950f5be324908aedf564985c1b316">
+    <rdf:first rdf:resource="http://www.esprit.tn/ontologies/smartgrid#VolantInertie"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#Residence_01">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Immeuble"/>
+    <sg:nom rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Residence 01</sg:nom>
+    <sg:surface rdf:datatype="http://www.w3.org/2001/XMLSchema#float">3200.0</sg:surface>
+    <sg:nbOccupants rdf:datatype="http://www.w3.org/2001/XMLSchema#int">120</sg:nbOccupants>
+    <sg:consommation rdf:datatype="http://www.w3.org/2001/XMLSchema#float">120000.0</sg:consommation>
+    <sg:adresse rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Avenue Habib Bourguiba, Tunis</sg:adresse>
+    <sg:anneeConstruction rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2010</sg:anneeConstruction>
+    <sg:classeEnergetique rdf:datatype="http://www.w3.org/2001/XMLSchema#string">B</sg:classeEnergetique>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#Borne_01">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.esprit.tn/ontologies/smartgrid#BorneRapide"/>
+    <sg:recharge rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Voiture_01"/>
+    <sg:estRaccordeeA rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Ligne_02"/>
+    <sg:nom rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Borne 01</sg:nom>
+    <sg:puissanceCharge rdf:datatype="http://www.w3.org/2001/XMLSchema#int">150</sg:puissanceCharge>
+    <sg:tempsChargeMinutes rdf:datatype="http://www.w3.org/2001/XMLSchema#int">30</sg:tempsChargeMinutes>
+    <sg:typeConnecteur rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CCS2</sg:typeConnecteur>
+    <sg:tarifKWh rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.45</sg:tarifKWh>
+    <sg:disponible rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</sg:disponible>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#Pluie">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Precipitation"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#Label_Batiment_01">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.esprit.tn/ontologies/smartgrid#LabelEnergetique"/>
+    <sg:certifie rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Residence_01"/>
+    <sg:certifie rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Ecole_01"/>
+    <sg:nom rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Label Batiment 01</sg:nom>
+    <sg:reference rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Label Bâtiment Économe</sg:reference>
+    <sg:organisme rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ANME</sg:organisme>
+    <sg:dateEntreeVigueur rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-03-01</sg:dateEntreeVigueur>
+    <sg:dureeValiditeAnnees rdf:datatype="http://www.w3.org/2001/XMLSchema#int">8</sg:dureeValiditeAnnees>
+    <sg:obligatoire rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</sg:obligatoire>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#stocke">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <owl:inverseOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#estStockePar"/>
+    <rdfs:domain rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Stockage"/>
+    <rdfs:range rdf:resource="http://www.esprit.tn/ontologies/smartgrid#SourceProduction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#Capteur_01">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.esprit.tn/ontologies/smartgrid#CapteurCourant"/>
+    <sg:surveille rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Ligne_01"/>
+    <sg:nom rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Capteur 01</sg:nom>
+    <sg:frequenceMesure rdf:datatype="http://www.w3.org/2001/XMLSchema#int">10</sg:frequenceMesure>
+    <sg:precisionMesure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">99.5</sg:precisionMesure>
+    <sg:protocole rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MQTT</sg:protocole>
+    <sg:versionLogiciel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">v2.1</sg:versionLogiciel>
+    <sg:valeurMesuree rdf:datatype="http://www.w3.org/2001/XMLSchema#float">312.5</sg:valeurMesuree>
+    <sg:dateInstallation rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-03-15</sg:dateInstallation>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#Compteur_02">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.esprit.tn/ontologies/smartgrid#CompteurIndustriel"/>
+    <sg:mesure rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Usine_01"/>
+    <sg:nom rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Compteur 02</sg:nom>
+    <sg:frequenceMesure rdf:datatype="http://www.w3.org/2001/XMLSchema#int">60</sg:frequenceMesure>
+    <sg:precisionMesure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">99.8</sg:precisionMesure>
+    <sg:protocole rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Modbus</sg:protocole>
+    <sg:versionLogiciel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">v1.4</sg:versionLogiciel>
+    <sg:valeurMesuree rdf:datatype="http://www.w3.org/2001/XMLSchema#float">85.0</sg:valeurMesuree>
+    <sg:dateInstallation rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-09-12</sg:dateInstallation>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#Modele_Prevision_01">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.esprit.tn/ontologies/smartgrid#PrevisionProduction"/>
+    <sg:predit rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Ferme_Solaire_01"/>
+    <sg:nom rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Modele Prevision 01</sg:nom>
+    <sg:precisionMesure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">92.0</sg:precisionMesure>
+    <sg:protocole rdf:datatype="http://www.w3.org/2001/XMLSchema#string">REST</sg:protocole>
+    <sg:versionLogiciel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">v3.0</sg:versionLogiciel>
+    <sg:dateInstallation rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-01-10</sg:dateInstallation>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#Parc_Eolien_01">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.esprit.tn/ontologies/smartgrid#EolienTerrestre"/>
+    <sg:alimente rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Usine_01"/>
+    <sg:injecteDans rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Ligne_01"/>
+    <sg:estPlusPuissantQue rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Ferme_Solaire_01"/>
+    <sg:nom rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Parc Eolien 01</sg:nom>
+    <sg:puissance rdf:datatype="http://www.w3.org/2001/XMLSchema#int">800</sg:puissance>
+    <sg:rendement rdf:datatype="http://www.w3.org/2001/XMLSchema#float">35.0</sg:rendement>
+    <sg:anneeMiseService rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2017</sg:anneeMiseService>
+    <sg:emissionCO2 rdf:datatype="http://www.w3.org/2001/XMLSchema#float">12.0</sg:emissionCO2>
+    <sg:productionAnnuelle rdf:datatype="http://www.w3.org/2001/XMLSchema#float">2100.0</sg:productionAnnuelle>
+    <sg:actif rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</sg:actif>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#nom">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#Educatif">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Batiment"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#BorneRecharge">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#MobiliteElectrique"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N332c09c32bc4493f9052504df4b92d1f">
+    <rdf:first rdf:resource="http://www.esprit.tn/ontologies/smartgrid#ReseauDistributionBT"/>
+    <rdf:rest rdf:nodeID="Nd59645d1969747a2932c042dd5a1c5ca"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#Ensoleillement">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#ConditionMeteo"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#Compteur_01">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.esprit.tn/ontologies/smartgrid#CompteurResidentiel"/>
+    <sg:mesure rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Residence_01"/>
+    <sg:nom rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Compteur 01</sg:nom>
+    <sg:frequenceMesure rdf:datatype="http://www.w3.org/2001/XMLSchema#int">900</sg:frequenceMesure>
+    <sg:precisionMesure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">99.0</sg:precisionMesure>
+    <sg:protocole rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Modbus</sg:protocole>
+    <sg:versionLogiciel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">v1.4</sg:versionLogiciel>
+    <sg:valeurMesuree rdf:datatype="http://www.w3.org/2001/XMLSchema#float">4.2</sg:valeurMesuree>
+    <sg:dateInstallation rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-06-01</sg:dateInstallation>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N57f56df36c1f43b9bed947cd563427a4">
+    <rdf:first rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Neige"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#Loi_ENR_01">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.esprit.tn/ontologies/smartgrid#LoiNationale"/>
+    <sg:encadre rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Ferme_Solaire_01"/>
+    <sg:encadre rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Parc_Eolien_01"/>
+    <sg:nom rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Loi ENR 01</sg:nom>
+    <sg:reference rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Loi 2015-12</sg:reference>
+    <sg:organisme rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ministère de l'Industrie et de l'Énergie</sg:organisme>
+    <sg:dateEntreeVigueur rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2015-05-11</sg:dateEntreeVigueur>
+    <sg:dureeValiditeAnnees rdf:datatype="http://www.w3.org/2001/XMLSchema#int">30</sg:dureeValiditeAnnees>
+    <sg:obligatoire rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</sg:obligatoire>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#recharge">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <owl:inverseOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#estRechargePar"/>
+    <rdfs:domain rdf:resource="http://www.esprit.tn/ontologies/smartgrid#BorneRecharge"/>
+    <rdfs:range rdf:resource="http://www.esprit.tn/ontologies/smartgrid#VehiculeElectrique"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#perturbe">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <owl:inverseOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#estPerturbeePar"/>
+    <rdfs:domain rdf:resource="http://www.esprit.tn/ontologies/smartgrid#ConditionMeteo"/>
+    <rdfs:range rdf:resource="http://www.esprit.tn/ontologies/smartgrid#LigneTransport"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N95f271daa9354b13ab0d786ae358c69b">
+    <rdf:first rdf:resource="http://www.esprit.tn/ontologies/smartgrid#CableSouterrainHT"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ne62578d2a7f04df7b3dae0b59173f687">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+    <owl:members rdf:nodeID="N962822d4986b4424bb5c2d81e7167277"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#extreme">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="http://www.esprit.tn/ontologies/smartgrid#ConditionMeteo"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:comment xml:lang="fr">Phénomène météo extrême</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N6268d0508c034d03af9a67114dc82374">
+    <rdf:first rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Entrepot"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nd32c7f217ec2478397e3b3e6fea4857f">
+    <rdf:first rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Boutique"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#encadre">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <owl:inverseOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#estEncadreePar"/>
+    <rdfs:domain rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Reglementation"/>
+    <rdfs:range rdf:resource="http://www.esprit.tn/ontologies/smartgrid#SourceProduction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#CompteurIndustriel">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#CompteurIntelligent"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#surveille">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://www.esprit.tn/ontologies/smartgrid#CapteurIoT"/>
+    <rdfs:range rdf:resource="http://www.esprit.tn/ontologies/smartgrid#LigneTransport"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#certifie">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <owl:inverseOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#estCertifiePar"/>
+    <rdfs:domain rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Reglementation"/>
+    <rdfs:range rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Batiment"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N9685931e3f544614b53ede2d0edbb3e0">
+    <rdf:first rdf:resource="http://www.esprit.tn/ontologies/smartgrid#MoyenneTension"/>
+    <rdf:rest rdf:nodeID="N8121e01892f5410f9046036e5514a39e"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nabf7db545581470684581a3d67e97538">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+    <owl:members rdf:nodeID="N37fab7c056f442978a3ef395feabe81d"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#BiomasseSolide">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Biomasse"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N7918f59f06d946cabbff1b708132d1b7">
+    <rdf:first rdf:resource="http://www.esprit.tn/ontologies/smartgrid#CapteurCourant"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#estCertifiePar">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Batiment"/>
+    <rdfs:range rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Reglementation"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#estPerturbeePar">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://www.esprit.tn/ontologies/smartgrid#LigneTransport"/>
+    <rdfs:range rdf:resource="http://www.esprit.tn/ontologies/smartgrid#ConditionMeteo"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#puissanceCharge">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="http://www.esprit.tn/ontologies/smartgrid#MobiliteElectrique"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    <rdfs:comment xml:lang="fr">kW</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#Ferme_Solaire_01">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Photovoltaique"/>
+    <sg:alimente rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Residence_01"/>
+    <sg:alimente rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Ecole_01"/>
+    <sg:nom rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ferme Solaire 01</sg:nom>
+    <sg:puissance rdf:datatype="http://www.w3.org/2001/XMLSchema#int">500</sg:puissance>
+    <sg:rendement rdf:datatype="http://www.w3.org/2001/XMLSchema#float">18.5</sg:rendement>
+    <sg:anneeMiseService rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2019</sg:anneeMiseService>
+    <sg:emissionCO2 rdf:datatype="http://www.w3.org/2001/XMLSchema#float">45.0</sg:emissionCO2>
+    <sg:productionAnnuelle rdf:datatype="http://www.w3.org/2001/XMLSchema#float">900.0</sg:productionAnnuelle>
+    <sg:actif rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</sg:actif>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nfed8dc3609b740b79c6ac4d82b699ddf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+    <owl:members rdf:nodeID="N17dc53ea7381421d81c80d392ff4fbf3"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#Residentiel">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Batiment"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#tempsRechargeHeures">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Stockage"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#VolantComposite">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#VolantInertie"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#gere">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://www.esprit.tn/ontologies/smartgrid#PlateformeGestion"/>
+    <rdfs:range rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Stockage"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#rendementStockage">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Stockage"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:comment xml:lang="fr">%</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#PrevisionConsommation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#ModelePrediction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nda4ccc62b695431bb529c7678f1a067b">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+    <owl:members rdf:nodeID="N7da2d11a6fd748cc8b2948088a2c4484"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#estPlusPuissantQue">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+    <rdfs:domain rdf:resource="http://www.esprit.tn/ontologies/smartgrid#SourceProduction"/>
+    <rdfs:range rdf:resource="http://www.esprit.tn/ontologies/smartgrid#SourceProduction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#reference">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Reglementation"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment xml:lang="fr">Référence officielle du texte</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#Borne_02">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.esprit.tn/ontologies/smartgrid#BorneLente"/>
+    <sg:recharge rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Bus_01"/>
+    <sg:estRaccordeeA rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Ligne_03"/>
+    <sg:nom rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Borne 02</sg:nom>
+    <sg:puissanceCharge rdf:datatype="http://www.w3.org/2001/XMLSchema#int">11</sg:puissanceCharge>
+    <sg:tempsChargeMinutes rdf:datatype="http://www.w3.org/2001/XMLSchema#int">360</sg:tempsChargeMinutes>
+    <sg:typeConnecteur rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Type2</sg:typeConnecteur>
+    <sg:tarifKWh rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.25</sg:tarifKWh>
+    <sg:disponible rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</sg:disponible>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#Ligne_03">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.esprit.tn/ontologies/smartgrid#ReseauDistributionBT"/>
+    <sg:nom rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ligne 03</sg:nom>
+    <sg:tension rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.4</sg:tension>
+    <sg:longueur rdf:datatype="http://www.w3.org/2001/XMLSchema#float">3.0</sg:longueur>
+    <sg:capaciteTransport rdf:datatype="http://www.w3.org/2001/XMLSchema#float">5.0</sg:capaciteTransport>
+    <sg:pertes rdf:datatype="http://www.w3.org/2001/XMLSchema#float">4.0</sg:pertes>
+    <sg:anneePose rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2015</sg:anneePose>
+    <sg:etatLigne rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Moyen</sg:etatLigne>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#Voiture_01">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.esprit.tn/ontologies/smartgrid#VoitureElectrique"/>
+    <sg:restitueA rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Ligne_03"/>
+    <sg:nom rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Voiture 01</sg:nom>
+    <sg:capaciteVehicule rdf:datatype="http://www.w3.org/2001/XMLSchema#float">60.0</sg:capaciteVehicule>
+    <sg:typeConnecteur rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CCS2</sg:typeConnecteur>
+    <sg:disponible rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</sg:disponible>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N93a9603868d7468a9feb6d2aa74bd4d2">
+    <rdf:first rdf:resource="http://www.esprit.tn/ontologies/smartgrid#MobiliteElectrique"/>
+    <rdf:rest rdf:nodeID="N3459617d3dbd44d68a3ff0c07788f74f"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N0c8ab0e989ab42188fd9673fe13ab8e6">
+    <rdf:first rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Subvention"/>
+    <rdf:rest rdf:nodeID="Nafe2b7f8024844749b6f08ad9431156c"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N0cbca05243c046f3a84040f63823595f">
+    <rdf:first rdf:resource="http://www.esprit.tn/ontologies/smartgrid#VoitureElectrique"/>
+    <rdf:rest rdf:nodeID="N79dd0dba5bdb4200ab8d6f9263e2046f"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#estRaccordeeA">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://www.esprit.tn/ontologies/smartgrid#BorneRecharge"/>
+    <rdfs:range rdf:resource="http://www.esprit.tn/ontologies/smartgrid#LigneTransport"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#tarifKWh">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="http://www.esprit.tn/ontologies/smartgrid#MobiliteElectrique"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#valeurMesuree">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="http://www.esprit.tn/ontologies/smartgrid#SystemeIntelligent"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nf86a9cf607014742bb71b9426e4e320c">
+    <rdf:first rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Biogaz"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#SupercondensateurCarbone">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Supercondensateur"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N1912f928f0074e5aa1553f4eaffb7a9b">
+    <rdf:first rdf:resource="http://www.esprit.tn/ontologies/smartgrid#PileACombustible"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#Norme">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Reglementation"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N11aee2bcf2894a9a8a43ea28f8daf0d9">
+    <rdf:first rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Solaire"/>
+    <rdf:rest rdf:nodeID="N5ffa269f018e444ea206228549372a76"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#productionAnnuelle">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="http://www.esprit.tn/ontologies/smartgrid#SourceProduction"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:comment xml:lang="fr">MWh par an</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#estMesurePar">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Batiment"/>
+    <rdfs:range rdf:resource="http://www.esprit.tn/ontologies/smartgrid#CompteurIntelligent"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#predit">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://www.esprit.tn/ontologies/smartgrid#ModelePrediction"/>
+    <rdfs:range rdf:resource="http://www.esprit.tn/ontologies/smartgrid#SourceProduction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N69f2763412344c1582f70794c659aa28">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+    <owl:members rdf:nodeID="Naf681bba33554015aff9efead8ea8d39"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#BarrageHydraulique">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Hydraulique"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#VentFaible">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Vent"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#obligatoire">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Reglementation"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N8f7507b88e6b425ab2b1ba06071a6e92">
+    <rdf:first rdf:resource="http://www.esprit.tn/ontologies/smartgrid#PrevisionProduction"/>
+    <rdf:rest rdf:nodeID="N104c94689655495aa838da09619295ff"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N059de6325c4a4013a219900bf4586499">
+    <rdf:first rdf:resource="http://www.esprit.tn/ontologies/smartgrid#PlateformeGestion"/>
+    <rdf:rest rdf:nodeID="N62ed02c5a7d74584a270c5c755b3c84e"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Na5ebf2a21da247eeba445ccf399a3bc5">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+    <owl:members rdf:nodeID="N765df5db35e94d5891783949e06cf184"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#Hopital_01">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Hopital"/>
+    <sg:nom rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Hopital 01</sg:nom>
+    <sg:surface rdf:datatype="http://www.w3.org/2001/XMLSchema#float">15000.0</sg:surface>
+    <sg:nbOccupants rdf:datatype="http://www.w3.org/2001/XMLSchema#int">600</sg:nbOccupants>
+    <sg:consommation rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1500000.0</sg:consommation>
+    <sg:adresse rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Boulevard du 9 Avril, Tunis</sg:adresse>
+    <sg:anneeConstruction rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1985</sg:anneeConstruction>
+    <sg:classeEnergetique rdf:datatype="http://www.w3.org/2001/XMLSchema#string">E</sg:classeEnergetique>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#CapteurIoT">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#SystemeIntelligent"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#SystemeAlerte">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#SystemeIntelligent"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ncd427d0decd84c0889dd737baa184e63">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+    <owl:members rdf:nodeID="N2ef573d16a9d48a592c5507988a227cf"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#BorneRapide">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#BorneRecharge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#rendement">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="http://www.esprit.tn/ontologies/smartgrid#SourceProduction"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:comment xml:lang="fr">Rendement en %</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#Hopital">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Hospitalier"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N4a9cc28a95b146a59b668b82a2233f06">
+    <rdf:first rdf:resource="http://www.esprit.tn/ontologies/smartgrid#HumiditeFaible"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ndafaf59788f94a56a55cb7c334c23086">
+    <rdf:first rdf:resource="http://www.esprit.tn/ontologies/smartgrid#ReservoirGravitaire"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ncee2a86bdf814b40a0fd16e0bd9d8dd6">
+    <rdf:first rdf:resource="http://www.esprit.tn/ontologies/smartgrid#SystemeAlerte"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#dureeHeures">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="http://www.esprit.tn/ontologies/smartgrid#ConditionMeteo"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:comment xml:lang="fr">Durée du phénomène en heures</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#protocole">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="http://www.esprit.tn/ontologies/smartgrid#SystemeIntelligent"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#LabelVert">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Label"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#Supercondensateur_01">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.esprit.tn/ontologies/smartgrid#SupercondensateurCarbone"/>
+    <sg:stocke rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Ferme_Solaire_01"/>
+    <sg:nom rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Supercondensateur 01</sg:nom>
+    <sg:capacite rdf:datatype="http://www.w3.org/2001/XMLSchema#float">50.0</sg:capacite>
+    <sg:tauxCharge rdf:datatype="http://www.w3.org/2001/XMLSchema#float">95.0</sg:tauxCharge>
+    <sg:dureeVieAnnees rdf:datatype="http://www.w3.org/2001/XMLSchema#int">15</sg:dureeVieAnnees>
+    <sg:rendementStockage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">98.0</sg:rendementStockage>
+    <sg:tempsRechargeHeures rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.1</sg:tempsRechargeHeures>
+    <sg:puissanceStockage rdf:datatype="http://www.w3.org/2001/XMLSchema#int">200</sg:puissanceStockage>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#CertificationTechnique">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Certification"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nd900a048e4334369bd87b9cec7138c06">
+    <rdf:first rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Immeuble"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N2ef573d16a9d48a592c5507988a227cf">
+    <rdf:first rdf:resource="http://www.esprit.tn/ontologies/smartgrid#LigneAerienneHT"/>
+    <rdf:rest rdf:nodeID="N95f271daa9354b13ab0d786ae358c69b"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#Ligne_02">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.esprit.tn/ontologies/smartgrid#CableSouterrainHT"/>
+    <sg:estConnecteA rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Ligne_03"/>
+    <sg:nom rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ligne 02</sg:nom>
+    <sg:tension rdf:datatype="http://www.w3.org/2001/XMLSchema#float">90.0</sg:tension>
+    <sg:longueur rdf:datatype="http://www.w3.org/2001/XMLSchema#float">15.0</sg:longueur>
+    <sg:capaciteTransport rdf:datatype="http://www.w3.org/2001/XMLSchema#float">150.0</sg:capaciteTransport>
+    <sg:pertes rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.2</sg:pertes>
+    <sg:anneePose rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2012</sg:anneePose>
+    <sg:etatLigne rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bon</sg:etatLigne>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#estConnecteA">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+    <rdfs:domain rdf:resource="http://www.esprit.tn/ontologies/smartgrid#LigneTransport"/>
+    <rdfs:range rdf:resource="http://www.esprit.tn/ontologies/smartgrid#LigneTransport"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#influence">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <owl:inverseOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#estInfluenceePar"/>
+    <rdfs:domain rdf:resource="http://www.esprit.tn/ontologies/smartgrid#ConditionMeteo"/>
+    <rdfs:range rdf:resource="http://www.esprit.tn/ontologies/smartgrid#SourceProduction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#Soleil_Tunis_01">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.esprit.tn/ontologies/smartgrid#RayonnementDirect"/>
+    <sg:influence rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Ferme_Solaire_01"/>
+    <sg:nom rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Soleil Tunis 01</sg:nom>
+    <sg:valeurMeteo rdf:datatype="http://www.w3.org/2001/XMLSchema#float">850.0</sg:valeurMeteo>
+    <sg:unite rdf:datatype="http://www.w3.org/2001/XMLSchema#string">W/m2</sg:unite>
+    <sg:dateReleve rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-07-15</sg:dateReleve>
+    <sg:region rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tunis</sg:region>
+    <sg:dureeHeures rdf:datatype="http://www.w3.org/2001/XMLSchema#float">10.0</sg:dureeHeures>
+    <sg:extreme rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</sg:extreme>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N1fa677e77dbe49f9a4cb71faef49780a">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+    <owl:members rdf:nodeID="Nf46627ecba3949f99c2b2d4d8e984eac"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N92aef1b748f547009bc460646808a8d3">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+    <owl:members rdf:nodeID="Na42500f4ea704b8b954934de98397d35"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N22ae6668288d4534b61e9e2e7a3e990d">
+    <rdf:first rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Hospitalier"/>
+    <rdf:rest rdf:nodeID="N7ce40b0abafe455480b9b25dc277d241"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#Barrage_01">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.esprit.tn/ontologies/smartgrid#BarrageHydraulique"/>
+    <sg:alimente rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Hopital_01"/>
+    <sg:injecteDans rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Ligne_01"/>
+    <sg:estPlusPuissantQue rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Parc_Eolien_01"/>
+    <sg:nom rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Barrage 01</sg:nom>
+    <sg:puissance rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1200</sg:puissance>
+    <sg:rendement rdf:datatype="http://www.w3.org/2001/XMLSchema#float">85.0</sg:rendement>
+    <sg:anneeMiseService rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2005</sg:anneeMiseService>
+    <sg:emissionCO2 rdf:datatype="http://www.w3.org/2001/XMLSchema#float">24.0</sg:emissionCO2>
+    <sg:productionAnnuelle rdf:datatype="http://www.w3.org/2001/XMLSchema#float">3500.0</sg:productionAnnuelle>
+    <sg:actif rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</sg:actif>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nd4bde5acbbd54d3885038018e49ad771">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+    <owl:members rdf:nodeID="N3017f210feb047c393915089c8232305"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N961cd75677844660a68f7016bc374024">
+    <rdf:first rdf:resource="http://www.esprit.tn/ontologies/smartgrid#CentreCommercial"/>
+    <rdf:rest rdf:nodeID="Nd32c7f217ec2478397e3b3e6fea4857f"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#mesure">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <owl:inverseOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#estMesurePar"/>
+    <rdfs:domain rdf:resource="http://www.esprit.tn/ontologies/smartgrid#CompteurIntelligent"/>
+    <rdfs:range rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Batiment"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#StockageHydraulique">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Stockage"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N9b7a31f15308491b8f04d680909c6fca">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+    <owl:members rdf:nodeID="N779be2cf2c294e9ebe26c5957ab06895"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#region">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="http://www.esprit.tn/ontologies/smartgrid#ConditionMeteo"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N32ba7775c2ec42fda85c6e9e59eada8c">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+    <owl:members rdf:nodeID="N233a2523ded341cbb72dc55bf030684b"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N2121704e14b74a26b39bf9bc514b4883">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+    <owl:members rdf:nodeID="Na3ed63bfc7f64f00b8b26746c74960e7"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#Temperature">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#ConditionMeteo"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ncb68715b90514f98be50eaa8a97371a0">
+    <rdf:first rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Stockage"/>
+    <rdf:rest rdf:nodeID="N6ed28f2dd2bf46e1b77da5fb315ef5a1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#LigneAerienneHT">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#HauteTension"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#Immeuble">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Residentiel"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nd8a2a7e6560a4f30b0d7d84a31e6861d">
+    <rdf:first rdf:resource="http://www.esprit.tn/ontologies/smartgrid#DirectiveInternationale"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N8bc51ca1cc644cec91e7b38fc3c74a17">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+    <owl:members rdf:nodeID="N67c84a36d0a148d6b7c05778cc04ce43"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#sAppliqueA">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Reglementation"/>
+    <rdfs:range rdf:resource="http://www.esprit.tn/ontologies/smartgrid#MobiliteElectrique"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#dureeValiditeAnnees">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Reglementation"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N17c2f706128442f1a1c0a5ac96898c7e">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+    <owl:members rdf:nodeID="N802b06312a384f20914ebdcde94ba860"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#estAlimentePar">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Batiment"/>
+    <rdfs:range rdf:resource="http://www.esprit.tn/ontologies/smartgrid#SourceProduction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#organisme">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Reglementation"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment xml:lang="fr">Organisme émetteur</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#LigneRaccordement">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#LigneTransport"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#tempsChargeMinutes">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="http://www.esprit.tn/ontologies/smartgrid#MobiliteElectrique"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N7ce40b0abafe455480b9b25dc277d241">
+    <rdf:first rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Educatif"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#LoiNationale">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Loi"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#NormeQualite">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Norme"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nab52061cc6194178afdce3199bed84a9">
+    <rdf:first rdf:resource="http://www.esprit.tn/ontologies/smartgrid#GeothermieBasseEnergie"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nd2236ae963064a2c9842dc3a5da3b55e">
+    <rdf:first rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Electrolyseur"/>
+    <rdf:rest rdf:nodeID="N1912f928f0074e5aa1553f4eaffb7a9b"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N0b1387e3f81444208d47308932fbf7de">
+    <rdf:first rdf:resource="http://www.esprit.tn/ontologies/smartgrid#LigneInterconnexion"/>
+    <rdf:rest rdf:nodeID="N5f7df0c0cc6a4f6d8f8252b7fd66d4ff"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#puissanceStockage">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Stockage"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    <rdfs:comment xml:lang="fr">kW</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#Ligne_01">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.esprit.tn/ontologies/smartgrid#LigneAerienneHT"/>
+    <sg:estConnecteA rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Ligne_02"/>
+    <sg:nom rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ligne 01</sg:nom>
+    <sg:tension rdf:datatype="http://www.w3.org/2001/XMLSchema#float">225.0</sg:tension>
+    <sg:longueur rdf:datatype="http://www.w3.org/2001/XMLSchema#float">120.0</sg:longueur>
+    <sg:capaciteTransport rdf:datatype="http://www.w3.org/2001/XMLSchema#float">400.0</sg:capaciteTransport>
+    <sg:pertes rdf:datatype="http://www.w3.org/2001/XMLSchema#float">2.5</sg:pertes>
+    <sg:anneePose rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2001</sg:anneePose>
+    <sg:etatLigne rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bon</sg:etatLigne>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#V2GBatiment">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#ServiceV2G"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#estInfluenceePar">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://www.esprit.tn/ontologies/smartgrid#SourceProduction"/>
+    <rdfs:range rdf:resource="http://www.esprit.tn/ontologies/smartgrid#ConditionMeteo"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Naa49d28ebc7744d1a6db39a4217217d0">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+    <owl:members rdf:nodeID="Nb10841c210a4412c9ce3975979c428d8"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nab4a234be9994f898ae379e621dc5a58">
+    <rdf:first rdf:resource="http://www.esprit.tn/ontologies/smartgrid#ConditionMeteo"/>
+    <rdf:rest rdf:nodeID="N6ddbec3a2c1c43f0b0d07343786a2bd1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#GeothermieHauteEnergie">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Geothermique"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#Commercial">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Batiment"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#longueur">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="http://www.esprit.tn/ontologies/smartgrid#LigneTransport"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:comment xml:lang="fr">km</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#Supercondensateur">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Stockage"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N87258b55ddd344eca9e3247d65fb4f81">
+    <rdf:first rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Geothermique"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Na8825e15152843ae89d8325b83dadff6">
+    <rdf:first rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Biomasse"/>
+    <rdf:rest rdf:nodeID="N87258b55ddd344eca9e3247d65fb4f81"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N0116235990f84265a793bfe39169c0f9">
+    <rdf:first rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Ensoleillement"/>
+    <rdf:rest rdf:nodeID="Ndf543173746647429edef62c3ae64bdd"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#Subvention_PV_01">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.esprit.tn/ontologies/smartgrid#SubventionPublique"/>
+    <sg:encadre rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Ferme_Solaire_01"/>
+    <sg:nom rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Subvention PV 01</sg:nom>
+    <sg:reference rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PROSOL ELEC</sg:reference>
+    <sg:organisme rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ANME</sg:organisme>
+    <sg:dateEntreeVigueur rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2010-01-01</sg:dateEntreeVigueur>
+    <sg:montantAide rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1500.0</sg:montantAide>
+    <sg:dureeValiditeAnnees rdf:datatype="http://www.w3.org/2001/XMLSchema#int">5</sg:dureeValiditeAnnees>
+    <sg:obligatoire rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</sg:obligatoire>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#Boutique">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Commercial"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#Humidite">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#ConditionMeteo"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#Ecole">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Educatif"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N0fa63e6fda024e9c97d85566e68786c8">
+    <rdf:first rdf:resource="http://www.esprit.tn/ontologies/smartgrid#BorneRecharge"/>
+    <rdf:rest rdf:nodeID="N167b9a49997d45918d6fbc9fcf0eefea"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N030d1ea829f84c39b027d23caa55048c">
+    <rdf:first rdf:resource="http://www.esprit.tn/ontologies/smartgrid#BatterieAcidePlomb"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#recoitDe">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://www.esprit.tn/ontologies/smartgrid#LigneTransport"/>
+    <rdfs:range rdf:resource="http://www.esprit.tn/ontologies/smartgrid#SourceProduction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N7da2d11a6fd748cc8b2948088a2c4484">
+    <rdf:first rdf:resource="http://www.esprit.tn/ontologies/smartgrid#BarrageHydraulique"/>
+    <rdf:rest rdf:nodeID="Nd9bef364f02f4854a445a502e51e902a"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#etatLigne">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="http://www.esprit.tn/ontologies/smartgrid#LigneTransport"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#frequenceMesure">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="http://www.esprit.tn/ontologies/smartgrid#SystemeIntelligent"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    <rdfs:comment xml:lang="fr">secondes</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#Norme_IEC_01">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.esprit.tn/ontologies/smartgrid#NormeSecurite"/>
+    <sg:encadre rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Barrage_01"/>
+    <sg:sAppliqueA rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Borne_01"/>
+    <sg:nom rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Norme IEC 01</sg:nom>
+    <sg:reference rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IEC 61851</sg:reference>
+    <sg:organisme rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IEC</sg:organisme>
+    <sg:dateEntreeVigueur rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2017-02-07</sg:dateEntreeVigueur>
+    <sg:dureeValiditeAnnees rdf:datatype="http://www.w3.org/2001/XMLSchema#int">10</sg:dureeValiditeAnnees>
+    <sg:obligatoire rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</sg:obligatoire>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#Canicule_01">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Canicule"/>
+    <sg:influence rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Ferme_Solaire_01"/>
+    <sg:perturbe rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Ligne_03"/>
+    <sg:nom rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Canicule 01</sg:nom>
+    <sg:valeurMeteo rdf:datatype="http://www.w3.org/2001/XMLSchema#float">46.0</sg:valeurMeteo>
+    <sg:unite rdf:datatype="http://www.w3.org/2001/XMLSchema#string">°C</sg:unite>
+    <sg:dateReleve rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-08-02</sg:dateReleve>
+    <sg:region rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Kairouan</sg:region>
+    <sg:dureeHeures rdf:datatype="http://www.w3.org/2001/XMLSchema#float">72.0</sg:dureeHeures>
+    <sg:extreme rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</sg:extreme>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#emissionCO2">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="http://www.esprit.tn/ontologies/smartgrid#SourceProduction"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:comment xml:lang="fr">g CO2 par kWh</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#BatterieAcidePlomb">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Batterie"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#puissance">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="http://www.esprit.tn/ontologies/smartgrid#SourceProduction"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    <rdfs:comment xml:lang="fr">Puissance installée en kW</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nded9be303b31467db2919d4289e4bc46">
+    <rdf:first rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Temperature"/>
+    <rdf:rest rdf:nodeID="Nb44732b8a23e4fcfa05f874940724a57"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#Usine_01">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Usine"/>
+    <sg:nom rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Usine 01</sg:nom>
+    <sg:surface rdf:datatype="http://www.w3.org/2001/XMLSchema#float">8000.0</sg:surface>
+    <sg:nbOccupants rdf:datatype="http://www.w3.org/2001/XMLSchema#int">250</sg:nbOccupants>
+    <sg:consommation rdf:datatype="http://www.w3.org/2001/XMLSchema#float">900000.0</sg:consommation>
+    <sg:adresse rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Zone industrielle, Sfax</sg:adresse>
+    <sg:anneeConstruction rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1998</sg:anneeConstruction>
+    <sg:classeEnergetique rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D</sg:classeEnergetique>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#nbOccupants">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Batiment"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#actif">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="http://www.esprit.tn/ontologies/smartgrid#SourceProduction"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#precisionMesure">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="http://www.esprit.tn/ontologies/smartgrid#SystemeIntelligent"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:comment xml:lang="fr">%</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#SupercondensateurHybride">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Supercondensateur"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#capaciteVehicule">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="http://www.esprit.tn/ontologies/smartgrid#MobiliteElectrique"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:comment xml:lang="fr">kWh</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#consommation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Batiment"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:comment xml:lang="fr">kWh par an</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N8d79ff92d3a64c5fb2997bda992a24ae">
+    <rdf:first rdf:resource="http://www.esprit.tn/ontologies/smartgrid#VolantAcier"/>
+    <rdf:rest rdf:nodeID="Nda05ab27609b490882e479f7e0b1ac44"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ne543712fff974f6f8e78487deef89d04">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+    <owl:members rdf:nodeID="Nc4701ab7b9994738b1abe3ae66946009"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#DirectiveInternationale">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Loi"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#Ecole_01">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Ecole"/>
+    <sg:nom rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ecole 01</sg:nom>
+    <sg:surface rdf:datatype="http://www.w3.org/2001/XMLSchema#float">4000.0</sg:surface>
+    <sg:nbOccupants rdf:datatype="http://www.w3.org/2001/XMLSchema#int">800</sg:nbOccupants>
+    <sg:consommation rdf:datatype="http://www.w3.org/2001/XMLSchema#float">150000.0</sg:consommation>
+    <sg:adresse rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rue de la Republique, Ariana</sg:adresse>
+    <sg:anneeConstruction rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2003</sg:anneeConstruction>
+    <sg:classeEnergetique rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C</sg:classeEnergetique>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#RayonnementDiffus">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Ensoleillement"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nc0707a2951f54098b7b588eff358b214">
+    <rdf:first rdf:resource="http://www.esprit.tn/ontologies/smartgrid#RayonnementDirect"/>
+    <rdf:rest rdf:nodeID="Nb9c832f9be854ddbb6642f80cd5d6b3c"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#BasseTension">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#LigneTransport"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N995d0135d2914d459cb65967a825c5b9">
+    <rdf:first rdf:resource="http://www.esprit.tn/ontologies/smartgrid#EolienTerrestre"/>
+    <rdf:rest rdf:nodeID="N44d67575d4554775b46a98903a6bc9c6"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N3459617d3dbd44d68a3ff0c07788f74f">
+    <rdf:first rdf:resource="http://www.esprit.tn/ontologies/smartgrid#SystemeIntelligent"/>
+    <rdf:rest rdf:nodeID="Nab4a234be9994f898ae379e621dc5a58"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#injecteDans">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <owl:inverseOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#recoitDe"/>
+    <rdfs:domain rdf:resource="http://www.esprit.tn/ontologies/smartgrid#SourceProduction"/>
+    <rdfs:range rdf:resource="http://www.esprit.tn/ontologies/smartgrid#LigneTransport"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#Subvention">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Reglementation"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nd48959042eda49c5a4393a106bdbcd38">
+    <rdf:first rdf:resource="http://www.esprit.tn/ontologies/smartgrid#InterconnexionInternationale"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#VehiculeElectrique">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#MobiliteElectrique"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Na7d2a212fb604b499e16c756489ecda0">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+    <owl:members rdf:nodeID="N11aee2bcf2894a9a8a43ea28f8daf0d9"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N8f2d25793a1843df929363a05225c28c">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+    <owl:members rdf:nodeID="N9058f04cbf104d8cbad327ae2597e4f2"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N2f37c5c3b75e4bbd8f95a8b6c88a7eb1">
+    <rdf:first rdf:resource="http://www.esprit.tn/ontologies/smartgrid#VentFaible"/>
+    <rdf:rest rdf:nodeID="N5ac87a2619dc452da5b8c85d6781c181"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nd9bef364f02f4854a445a502e51e902a">
+    <rdf:first rdf:resource="http://www.esprit.tn/ontologies/smartgrid#MicroCentrale"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#PlateformeSupervision">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#PlateformeGestion"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#ServiceV2G">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#MobiliteElectrique"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nbb4ff8e118034b0398f672c5edde38b9">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+    <owl:members rdf:nodeID="N1299ab6c9b7a43b7b2ff24dc9a6783ca"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#unite">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="http://www.esprit.tn/ontologies/smartgrid#ConditionMeteo"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment xml:lang="fr">W/m2, km/h, mm, °C ou %</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#Plateforme_01">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.esprit.tn/ontologies/smartgrid#PlateformeSupervision"/>
+    <sg:gere rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Batterie_01"/>
+    <sg:nom rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Plateforme 01</sg:nom>
+    <sg:frequenceMesure rdf:datatype="http://www.w3.org/2001/XMLSchema#int">60</sg:frequenceMesure>
+    <sg:protocole rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MQTT</sg:protocole>
+    <sg:versionLogiciel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">v5.2</sg:versionLogiciel>
+    <sg:dateInstallation rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-11-05</sg:dateInstallation>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#Neige">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Precipitation"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nb44732b8a23e4fcfa05f874940724a57">
+    <rdf:first rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Humidite"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Neab5ab76f8064d2a896f6dae5bfaa9b8">
+    <rdf:first rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Batterie"/>
+    <rdf:rest rdf:nodeID="N47e3257c5c5044fc894c5ea1e976bd97"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N6ddbec3a2c1c43f0b0d07343786a2bd1">
+    <rdf:first rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Reglementation"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Na874b7950bd6426aae0a7966c9ff7f5c">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+    <owl:members rdf:nodeID="Nc141a25798aa41e481aefab8bde775e5"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N1b29bb51c10240de8d21794c44980685">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+    <owl:members rdf:nodeID="Nd2236ae963064a2c9842dc3a5da3b55e"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N67b5a710317f44b1bce18c0b71a074b9">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+    <owl:members rdf:nodeID="N995d0135d2914d459cb65967a825c5b9"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nb10841c210a4412c9ce3975979c428d8">
+    <rdf:first rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Ecole"/>
+    <rdf:rest rdf:nodeID="Nfb1e020c8cbd4b06a319df337ce66f0a"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N6315f5c4c4404ea08fc7168b2ef10d1f">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+    <owl:members rdf:nodeID="Nfda774b37ebb4ababa2f45465749cfa6"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#CableSouterrainMT">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#MoyenneTension"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N3fa50212f70a4502bdc0dcf9ecd70e26">
+    <rdf:first rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Usine"/>
+    <rdf:rest rdf:nodeID="N6268d0508c034d03af9a67114dc82374"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#Entrepot">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Industriel"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#tension">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="http://www.esprit.tn/ontologies/smartgrid#LigneTransport"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:comment xml:lang="fr">kV</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#tauxCharge">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Stockage"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:comment xml:lang="fr">Taux de charge en %</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#Pluie_01">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Pluie"/>
+    <sg:influence rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Barrage_01"/>
+    <sg:nom rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pluie 01</sg:nom>
+    <sg:valeurMeteo rdf:datatype="http://www.w3.org/2001/XMLSchema#float">120.0</sg:valeurMeteo>
+    <sg:unite rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mm</sg:unite>
+    <sg:dateReleve rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-11-20</sg:dateReleve>
+    <sg:region rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Jendouba</sg:region>
+    <sg:dureeHeures rdf:datatype="http://www.w3.org/2001/XMLSchema#float">24.0</sg:dureeHeures>
+    <sg:extreme rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</sg:extreme>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N17223fffb8b24487b1b6bb077d18c905">
+    <rdf:first rdf:resource="http://www.esprit.tn/ontologies/smartgrid#VehiculeElectrique"/>
+    <rdf:rest rdf:nodeID="N0fa63e6fda024e9c97d85566e68786c8"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#CapteurTemperature">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#CapteurIoT"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#dateInstallation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="http://www.esprit.tn/ontologies/smartgrid#SystemeIntelligent"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N62ed02c5a7d74584a270c5c755b3c84e">
+    <rdf:first rdf:resource="http://www.esprit.tn/ontologies/smartgrid#ModelePrediction"/>
+    <rdf:rest rdf:nodeID="Ncee2a86bdf814b40a0fd16e0bd9d8dd6"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#PlateformeFacturation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#PlateformeGestion"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#ModelePrediction">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#SystemeIntelligent"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#Vent">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#ConditionMeteo"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#restitueA">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://www.esprit.tn/ontologies/smartgrid#VehiculeElectrique"/>
+    <rdfs:range rdf:resource="http://www.esprit.tn/ontologies/smartgrid#LigneTransport"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#dateReleve">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="http://www.esprit.tn/ontologies/smartgrid#ConditionMeteo"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#Batterie_01">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.esprit.tn/ontologies/smartgrid#BatterieLithium"/>
+    <sg:stocke rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Ferme_Solaire_01"/>
+    <sg:nom rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Batterie 01</sg:nom>
+    <sg:capacite rdf:datatype="http://www.w3.org/2001/XMLSchema#float">2000.0</sg:capacite>
+    <sg:tauxCharge rdf:datatype="http://www.w3.org/2001/XMLSchema#float">80.0</sg:tauxCharge>
+    <sg:dureeVieAnnees rdf:datatype="http://www.w3.org/2001/XMLSchema#int">10</sg:dureeVieAnnees>
+    <sg:rendementStockage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">92.0</sg:rendementStockage>
+    <sg:tempsRechargeHeures rdf:datatype="http://www.w3.org/2001/XMLSchema#float">4.0</sg:tempsRechargeHeures>
+    <sg:puissanceStockage rdf:datatype="http://www.w3.org/2001/XMLSchema#int">500</sg:puissanceStockage>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#Batiment">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N772e97ee2b02466d930fef998231ff71">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+    <owl:members rdf:nodeID="N3f4f1791e9ae4a44a87cc31d388079e0"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nc426d14099d94c5fbe04dcfd9d2e5ce9">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+    <owl:members rdf:nodeID="N58888af6d9374d599022b80cad5a3227"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#classeEnergetique">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Batiment"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N460c346fd2d045b4959e2ad28f6eb2b9">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+    <owl:members rdf:nodeID="Nc0707a2951f54098b7b588eff358b214"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N58888af6d9374d599022b80cad5a3227">
+    <rdf:first rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Loi"/>
+    <rdf:rest rdf:nodeID="N7c8ce611d7914868937c3f3df3a0460a"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#Batterie">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Stockage"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#pertes">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="http://www.esprit.tn/ontologies/smartgrid#LigneTransport"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:comment xml:lang="fr">%</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#CompteurIntelligent">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#SystemeIntelligent"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nc4701ab7b9994738b1abe3ae66946009">
+    <rdf:first rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Photovoltaique"/>
+    <rdf:rest rdf:nodeID="Na8ef40e729cf421db9c884477c6c0814"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#Centrale_Biomasse_01">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.esprit.tn/ontologies/smartgrid#BiomasseSolide"/>
+    <sg:injecteDans rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Ligne_03"/>
+    <sg:nom rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Centrale Biomasse 01</sg:nom>
+    <sg:puissance rdf:datatype="http://www.w3.org/2001/XMLSchema#int">300</sg:puissance>
+    <sg:rendement rdf:datatype="http://www.w3.org/2001/XMLSchema#float">30.0</sg:rendement>
+    <sg:anneeMiseService rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2015</sg:anneeMiseService>
+    <sg:emissionCO2 rdf:datatype="http://www.w3.org/2001/XMLSchema#float">230.0</sg:emissionCO2>
+    <sg:productionAnnuelle rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1800.0</sg:productionAnnuelle>
+    <sg:actif rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</sg:actif>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#Solaire">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#SourceProduction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nfda774b37ebb4ababa2f45465749cfa6">
+    <rdf:first rdf:resource="http://www.esprit.tn/ontologies/smartgrid#SubventionPublique"/>
+    <rdf:rest rdf:nodeID="Nded6f0be13f64fb19f65e302226c188e"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#alimente">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <owl:inverseOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#estAlimentePar"/>
+    <rdfs:domain rdf:resource="http://www.esprit.tn/ontologies/smartgrid#SourceProduction"/>
+    <rdfs:range rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Batiment"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N013be16f1e6e4d3a8e9f3babb9f10873">
+    <rdf:first rdf:resource="http://www.esprit.tn/ontologies/smartgrid#LigneAerienneMT"/>
+    <rdf:rest rdf:nodeID="Na8d17c910bc24f7bb1d412f82f1ad20f"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#Station_Hydrogene_01">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Electrolyseur"/>
+    <sg:stocke rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Parc_Eolien_01"/>
+    <sg:nom rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Station Hydrogene 01</sg:nom>
+    <sg:capacite rdf:datatype="http://www.w3.org/2001/XMLSchema#float">10000.0</sg:capacite>
+    <sg:tauxCharge rdf:datatype="http://www.w3.org/2001/XMLSchema#float">60.0</sg:tauxCharge>
+    <sg:dureeVieAnnees rdf:datatype="http://www.w3.org/2001/XMLSchema#int">20</sg:dureeVieAnnees>
+    <sg:rendementStockage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">40.0</sg:rendementStockage>
+    <sg:tempsRechargeHeures rdf:datatype="http://www.w3.org/2001/XMLSchema#float">8.0</sg:tempsRechargeHeures>
+    <sg:puissanceStockage rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1000</sg:puissanceStockage>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N31b24cf8efcb455191db8d4e14260a0e">
+    <rdf:first rdf:resource="http://www.esprit.tn/ontologies/smartgrid#ParkingPublic"/>
+    <rdf:rest rdf:nodeID="Ne67b5ad78b76451cbc984357d8eba17c"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#Geothermique">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#SourceProduction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#dureeVieAnnees">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Stockage"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#BorneLente">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#BorneRecharge"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nafe2b7f8024844749b6f08ad9431156c">
+    <rdf:first rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Label"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nf46627ecba3949f99c2b2d4d8e984eac">
+    <rdf:first rdf:resource="http://www.esprit.tn/ontologies/smartgrid#StationAutoroute"/>
+    <rdf:rest rdf:nodeID="N37eb05c12ec7479fab61fff1dc38f5b9"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#versionLogiciel">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="http://www.esprit.tn/ontologies/smartgrid#SystemeIntelligent"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nbe4ecad28150476e9856b6861e605e94">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+    <owl:members rdf:nodeID="N961cd75677844660a68f7016bc374024"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#Loi">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Reglementation"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#Canicule">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Temperature"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N962822d4986b4424bb5c2d81e7167277">
+    <rdf:first rdf:resource="http://www.esprit.tn/ontologies/smartgrid#HumiditeElevee"/>
+    <rdf:rest rdf:nodeID="N4a9cc28a95b146a59b668b82a2233f06"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#ReseauDistributionBT">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#BasseTension"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#Hydraulique">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#SourceProduction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N1bbfaba522c848679b32d8e727338e7d">
+    <rdf:first rdf:resource="http://www.esprit.tn/ontologies/smartgrid#VagueFroid"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N1e6217d4adc9417eadd489a46b814475">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+    <owl:members rdf:nodeID="N8d79ff92d3a64c5fb2997bda992a24ae"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ndd0d7bca00a544999b2f682651adeab8">
+    <rdf:first rdf:resource="http://www.esprit.tn/ontologies/smartgrid#ServiceV2G"/>
+    <rdf:rest rdf:nodeID="N5d95890eb8d0421d8b31428d793bbbf0"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N201c2a1484dd45d18bcbded43077e7e8">
+    <rdf:first rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Certification"/>
+    <rdf:rest rdf:nodeID="N0c8ab0e989ab42188fd9673fe13ab8e6"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#disponible">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="http://www.esprit.tn/ontologies/smartgrid#MobiliteElectrique"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N7c4f2a58a7484163a3b96816c27ca960">
+    <rdf:first rdf:resource="http://www.esprit.tn/ontologies/smartgrid#SupercondensateurCarbone"/>
+    <rdf:rest rdf:nodeID="Ncd3560bf43f446c0b497ebf9f34b9d40"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#anneePose">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="http://www.esprit.tn/ontologies/smartgrid#LigneTransport"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#surface">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Batiment"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:comment xml:lang="fr">m2</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N7e4b1de5e23f4761adaf252f9c1b0924">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+    <owl:members rdf:nodeID="N3fa50212f70a4502bdc0dcf9ecd70e26"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Na8f4841a2b584cd3bc2a9e1183aa3749">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+    <owl:members rdf:nodeID="N0cbca05243c046f3a84040f63823595f"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#typeConnecteur">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="http://www.esprit.tn/ontologies/smartgrid#MobiliteElectrique"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#VentFort">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Vent"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#capaciteTransport">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="http://www.esprit.tn/ontologies/smartgrid#LigneTransport"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:comment xml:lang="fr">MW</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#Stockage">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N5d95890eb8d0421d8b31428d793bbbf0">
+    <rdf:first rdf:resource="http://www.esprit.tn/ontologies/smartgrid#ParkingSmart"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#anneeMiseService">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="http://www.esprit.tn/ontologies/smartgrid#SourceProduction"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nf17c3c392e6a4378bce71f1c8d0586b1">
+    <rdf:first rdf:resource="http://www.esprit.tn/ontologies/smartgrid#BiomasseSolide"/>
+    <rdf:rest rdf:nodeID="Nf86a9cf607014742bb71b9426e4e320c"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#CertificationEnvironnementale">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Certification"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#Industriel">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Batiment"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#AlertePanne">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#SystemeAlerte"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#estStockePar">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://www.esprit.tn/ontologies/smartgrid#SourceProduction"/>
+    <rdfs:range rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Stockage"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#NormeSecurite">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Norme"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nc141a25798aa41e481aefab8bde775e5">
+    <rdf:first rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Canicule"/>
+    <rdf:rest rdf:nodeID="N1bbfaba522c848679b32d8e727338e7d"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#VolantAcier">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#VolantInertie"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N4f66ff2a3bb54b0190b2cc0b5a8ff4b9">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+    <owl:members rdf:nodeID="N2f37c5c3b75e4bbd8f95a8b6c88a7eb1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#MicroCentrale">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Hydraulique"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#CreditImpot">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Subvention"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nbe7268497e9d43f181ead4c9b58e4fe6">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+    <owl:members rdf:nodeID="N332c09c32bc4493f9052504df4b92d1f"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#Bus_01">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.esprit.tn/ontologies/smartgrid#BusElectrique"/>
+    <sg:nom rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bus 01</sg:nom>
+    <sg:capaciteVehicule rdf:datatype="http://www.w3.org/2001/XMLSchema#float">300.0</sg:capaciteVehicule>
+    <sg:typeConnecteur rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Type2</sg:typeConnecteur>
+    <sg:disponible rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</sg:disponible>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N6eb1bda43d7d449d86c8a0f6b5d3623c">
+    <rdf:first rdf:resource="http://www.esprit.tn/ontologies/smartgrid#BorneRapide"/>
+    <rdf:rest rdf:nodeID="N8115841d1f5647b19e6a588334ba26a3"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#HumiditeElevee">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Humidite"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#BatterieLithium">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Batterie"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N3a8ab3570479440cb638e5b04f99e4e5">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+    <owl:members rdf:nodeID="N0116235990f84265a793bfe39169c0f9"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#Ariana_01">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.esprit.tn/ontologies/smartgrid#RayonnementDiffus"/>
+    <sg:nom rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ariana 01</sg:nom>
+    <sg:valeurMeteo rdf:datatype="http://www.w3.org/2001/XMLSchema#float">-6.0</sg:valeurMeteo>
+    <sg:region rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ariana</sg:region>
+    <sg:extreme rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</sg:extreme>
+    <sg:perturbe rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Ligne_03"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N2dde60b3a88d47e4bb1303c3e64ab80b">
+    <rdf:first rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Supercondensateur"/>
+    <rdf:rest rdf:nodeID="Nf27950f5be324908aedf564985c1b316"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nd59645d1969747a2932c042dd5a1c5ca">
+    <rdf:first rdf:resource="http://www.esprit.tn/ontologies/smartgrid#BranchementBT"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N3f4f1791e9ae4a44a87cc31d388079e0">
+    <rdf:first rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Residentiel"/>
+    <rdf:rest rdf:nodeID="N301d6af2759f44b4b3d427816e8cd8c8"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Na8d17c910bc24f7bb1d412f82f1ad20f">
+    <rdf:first rdf:resource="http://www.esprit.tn/ontologies/smartgrid#CableSouterrainMT"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#Biogaz">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Biomasse"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#estRechargePar">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://www.esprit.tn/ontologies/smartgrid#VehiculeElectrique"/>
+    <rdfs:range rdf:resource="http://www.esprit.tn/ontologies/smartgrid#BorneRecharge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#Universite">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Educatif"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#Hydrogene">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Stockage"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N6edb411c3b7e4640b3956e548ee6bc41">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+    <owl:members rdf:nodeID="Nb8a87fe844784595bec0325e56012285"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#adresse">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Batiment"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N765df5db35e94d5891783949e06cf184">
+    <rdf:first rdf:resource="http://www.esprit.tn/ontologies/smartgrid#CapteurIoT"/>
+    <rdf:rest rdf:nodeID="N99bce7b25ae548299df547088248969e"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N6ed28f2dd2bf46e1b77da5fb315ef5a1">
+    <rdf:first rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Batiment"/>
+    <rdf:rest rdf:nodeID="N18c97db0b04b4493be119640e375b59a"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N104c94689655495aa838da09619295ff">
+    <rdf:first rdf:resource="http://www.esprit.tn/ontologies/smartgrid#PrevisionConsommation"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#StationAutoroute">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#StationRecharge"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N2beac7301bf9498c90339eeede958352">
+    <rdf:first rdf:resource="http://www.esprit.tn/ontologies/smartgrid#RaccordementConsommation"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#LigneInterconnexion">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#LigneTransport"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#montantAide">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Reglementation"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:comment xml:lang="fr">TND</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#InterconnexionInternationale">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#LigneInterconnexion"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#MoyenneTension">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#LigneTransport"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N8115841d1f5647b19e6a588334ba26a3">
+    <rdf:first rdf:resource="http://www.esprit.tn/ontologies/smartgrid#BorneLente"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#anneeConstruction">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Batiment"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#Vent_Sfax_01">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.esprit.tn/ontologies/smartgrid#VentFort"/>
+    <sg:influence rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Parc_Eolien_01"/>
+    <sg:perturbe rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Ligne_01"/>
+    <sg:nom rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Vent Sfax 01</sg:nom>
+    <sg:valeurMeteo rdf:datatype="http://www.w3.org/2001/XMLSchema#float">65.0</sg:valeurMeteo>
+    <sg:unite rdf:datatype="http://www.w3.org/2001/XMLSchema#string">km/h</sg:unite>
+    <sg:dateReleve rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-02-03</sg:dateReleve>
+    <sg:region rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sfax</sg:region>
+    <sg:dureeHeures rdf:datatype="http://www.w3.org/2001/XMLSchema#float">6.0</sg:dureeHeures>
+    <sg:extreme rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</sg:extreme>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#CableSouterrainHT">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#HauteTension"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N3f6a077de5f844f7a3355a68a6464aad">
+    <rdf:first rdf:resource="http://www.esprit.tn/ontologies/smartgrid#CompteurIndustriel"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N92ed7da1541c4b3e91c76e5ce4a2974b">
+    <rdf:first rdf:resource="http://www.esprit.tn/ontologies/smartgrid#CapteurTemperature"/>
+    <rdf:rest rdf:nodeID="N7918f59f06d946cabbff1b708132d1b7"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N355432b1db0e46b4808113bf2e33d18a">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+    <owl:members rdf:nodeID="N23ba391489e1420c85d95b74c7bfca40"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ncd3560bf43f446c0b497ebf9f34b9d40">
+    <rdf:first rdf:resource="http://www.esprit.tn/ontologies/smartgrid#SupercondensateurHybride"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N5f7df0c0cc6a4f6d8f8252b7fd66d4ff">
+    <rdf:first rdf:resource="http://www.esprit.tn/ontologies/smartgrid#LigneRaccordement"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N779be2cf2c294e9ebe26c5957ab06895">
+    <rdf:first rdf:resource="http://www.esprit.tn/ontologies/smartgrid#StationPompage"/>
+    <rdf:rest rdf:nodeID="Ndafaf59788f94a56a55cb7c334c23086"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#Eolien">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#SourceProduction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N301d6af2759f44b4b3d427816e8cd8c8">
+    <rdf:first rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Industriel"/>
+    <rdf:rest rdf:nodeID="N2f19ff408b9b4c0183024d0ef9c73f63"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#BranchementBT">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#BasseTension"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#AlerteSurcharge">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#SystemeAlerte"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N95cb9c14e81e4739bfe42f418f9151c6">
+    <rdf:first rdf:resource="http://www.esprit.tn/ontologies/smartgrid#NormeQualite"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N6f56ea9c271e45da8e4d10c64c2ea420">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+    <owl:members rdf:nodeID="Ne63d0096d589457ba19961d261b0a328"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+    <rdfs:label xml:lang="fr">Ontologie Énergie et Smart Grid</rdfs:label>
+    <rdfs:comment xml:lang="fr">Production, stockage, bâtiments, lignes de transport, mobilité électrique, systèmes intelligents, conditions météo et réglementation.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N8968a86867c2459aadfd883e49653a57">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+    <owl:members rdf:nodeID="N013be16f1e6e4d3a8e9f3babb9f10873"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nb9c832f9be854ddbb6642f80cd5d6b3c">
+    <rdf:first rdf:resource="http://www.esprit.tn/ontologies/smartgrid#RayonnementDiffus"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#dateEntreeVigueur">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Reglementation"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#StationRecharge">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#MobiliteElectrique"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ne1e525750efb443fbc1e8724191d6a1f">
+    <rdf:first rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Pluie"/>
+    <rdf:rest rdf:nodeID="N57f56df36c1f43b9bed947cd563427a4"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N37fab7c056f442978a3ef395feabe81d">
+    <rdf:first rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Hopital"/>
+    <rdf:rest rdf:nodeID="N60263fde5f8d49dd9cb06102d1319c38"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N5d1569d9eee742bbb27a53d60dad7714">
+    <rdf:first rdf:resource="http://www.esprit.tn/ontologies/smartgrid#LabelVert"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#Biomasse">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#SourceProduction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#Usine">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Industriel"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N47e3257c5c5044fc894c5ea1e976bd97">
+    <rdf:first rdf:resource="http://www.esprit.tn/ontologies/smartgrid#StockageHydraulique"/>
+    <rdf:rest rdf:nodeID="Nae2a6567defe47cd9a2554553b8ce9ba"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#capacite">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Stockage"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:comment xml:lang="fr">Capacité en kWh</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#V2GReseau">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#ServiceV2G"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#RayonnementDirect">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Ensoleillement"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#SystemeIntelligent">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N1bfcbb8deab144bbb12a49c256f6f084">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+    <owl:members rdf:nodeID="Ne1e525750efb443fbc1e8724191d6a1f"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N17dc53ea7381421d81c80d392ff4fbf3">
+    <rdf:first rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Maison"/>
+    <rdf:rest rdf:nodeID="Nd900a048e4334369bd87b9cec7138c06"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N7c8ce611d7914868937c3f3df3a0460a">
+    <rdf:first rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Norme"/>
+    <rdf:rest rdf:nodeID="N201c2a1484dd45d18bcbded43077e7e8"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#Label">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Reglementation"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#CapteurCourant">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#CapteurIoT"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nb8a87fe844784595bec0325e56012285">
+    <rdf:first rdf:resource="http://www.esprit.tn/ontologies/smartgrid#RaccordementProduction"/>
+    <rdf:rest rdf:nodeID="N2beac7301bf9498c90339eeede958352"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nae2a6567defe47cd9a2554553b8ce9ba">
+    <rdf:first rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Hydrogene"/>
+    <rdf:rest rdf:nodeID="N2dde60b3a88d47e4bb1303c3e64ab80b"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#ReservoirGravitaire">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#StockageHydraulique"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#Certification">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Reglementation"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N10a8232661a340e2b65029a366ce5f37">
+    <rdf:first rdf:resource="http://www.esprit.tn/ontologies/smartgrid#CertificationTechnique"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#HauteTension">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#LigneTransport"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#BusElectrique">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#VehiculeElectrique"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#StationPompage">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#StockageHydraulique"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Naf681bba33554015aff9efead8ea8d39">
+    <rdf:first rdf:resource="http://www.esprit.tn/ontologies/smartgrid#PlateformeSupervision"/>
+    <rdf:rest rdf:nodeID="N4d090340b78048999e99e581cfedeaf5"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N99bce7b25ae548299df547088248969e">
+    <rdf:first rdf:resource="http://www.esprit.tn/ontologies/smartgrid#CompteurIntelligent"/>
+    <rdf:rest rdf:nodeID="N059de6325c4a4013a219900bf4586499"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N64162c9404a74b438ce1cfd5ed3d5626">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+    <owl:members rdf:nodeID="N7c4f2a58a7484163a3b96816c27ca960"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ne63d0096d589457ba19961d261b0a328">
+    <rdf:first rdf:resource="http://www.esprit.tn/ontologies/smartgrid#CertificationEnvironnementale"/>
+    <rdf:rest rdf:nodeID="N10a8232661a340e2b65029a366ce5f37"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#CompteurResidentiel">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#CompteurIntelligent"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N9330a60c8da64611b61bc5d7c7d1877c">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+    <owl:members rdf:nodeID="Neab5ab76f8064d2a896f6dae5bfaa9b8"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N5ffa269f018e444ea206228549372a76">
+    <rdf:first rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Eolien"/>
+    <rdf:rest rdf:nodeID="N62d30836a61e4b9db9caa8c9e4d2282d"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N67c84a36d0a148d6b7c05778cc04ce43">
+    <rdf:first rdf:resource="http://www.esprit.tn/ontologies/smartgrid#NormeSecurite"/>
+    <rdf:rest rdf:nodeID="N95cb9c14e81e4739bfe42f418f9151c6"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N62c20cd879f94b26af68288b03516753">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+    <owl:members rdf:nodeID="Nca169d6d40e74b1b997f4d9e7875128f"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#HumiditeFaible">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Humidite"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#MobiliteElectrique">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#PileACombustible">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Hydrogene"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nda05ab27609b490882e479f7e0b1ac44">
+    <rdf:first rdf:resource="http://www.esprit.tn/ontologies/smartgrid#VolantComposite"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N50ae90317d7b4d3b8b23f8f60c511db2">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+    <owl:members rdf:nodeID="N31b24cf8efcb455191db8d4e14260a0e"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#ParkingPrive">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#ParkingSmart"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N18c97db0b04b4493be119640e375b59a">
+    <rdf:first rdf:resource="http://www.esprit.tn/ontologies/smartgrid#LigneTransport"/>
+    <rdf:rest rdf:nodeID="N93a9603868d7468a9feb6d2aa74bd4d2"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#Hospitalier">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Batiment"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#CentreCommercial">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Commercial"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N79dd0dba5bdb4200ab8d6f9263e2046f">
+    <rdf:first rdf:resource="http://www.esprit.tn/ontologies/smartgrid#BusElectrique"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N238754217718400f846efe9cb105d31b">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+    <owl:members rdf:nodeID="N3352efd1d5b344ec920b1fcb80d78fea"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#EolienOffshore">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Eolien"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N37eb05c12ec7479fab61fff1dc38f5b9">
+    <rdf:first rdf:resource="http://www.esprit.tn/ontologies/smartgrid#StationUrbaine"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#Maison">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Residentiel"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#estEncadreePar">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://www.esprit.tn/ontologies/smartgrid#SourceProduction"/>
+    <rdfs:range rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Reglementation"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ne3ca9b4a27334452a66f7abb3b6d8e1d">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+    <owl:members rdf:nodeID="N6eb1bda43d7d449d86c8a0f6b5d3623c"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#ParkingPublic">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#ParkingSmart"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N2f19ff408b9b4c0183024d0ef9c73f63">
+    <rdf:first rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Commercial"/>
+    <rdf:rest rdf:nodeID="N22ae6668288d4534b61e9e2e7a3e990d"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nf8c54a27d0c3489b8b1b2ea518ed860f">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+    <owl:members rdf:nodeID="N8f7507b88e6b425ab2b1ba06071a6e92"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ne67b5ad78b76451cbc984357d8eba17c">
+    <rdf:first rdf:resource="http://www.esprit.tn/ontologies/smartgrid#ParkingPrive"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N44d67575d4554775b46a98903a6bc9c6">
+    <rdf:first rdf:resource="http://www.esprit.tn/ontologies/smartgrid#EolienOffshore"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#valeurMeteo">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="http://www.esprit.tn/ontologies/smartgrid#ConditionMeteo"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:comment xml:lang="fr">Valeur relevée (exprimée dans unite)</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#InterconnexionNationale">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#LigneInterconnexion"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#Clinique">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Hospitalier"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#LigneAerienneMT">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#MoyenneTension"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#VolantInertie">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Stockage"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Na8ef40e729cf421db9c884477c6c0814">
+    <rdf:first rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Thermodynamique"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#VoitureElectrique">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#VehiculeElectrique"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nc52a74824ea84f8794e242f43741a1c6">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+    <owl:members rdf:nodeID="N92ed7da1541c4b3e91c76e5ce4a2974b"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Na3ed63bfc7f64f00b8b26746c74960e7">
+    <rdf:first rdf:resource="http://www.esprit.tn/ontologies/smartgrid#LabelEnergetique"/>
+    <rdf:rest rdf:nodeID="N5d1569d9eee742bbb27a53d60dad7714"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#RaccordementConsommation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#LigneRaccordement"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#ParkingSmart">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#MobiliteElectrique"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#RaccordementProduction">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#LigneRaccordement"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#Electrolyseur">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Hydrogene"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N9629a74e58d04c33951561a2fff84fd1">
+    <rdf:first rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Precipitation"/>
+    <rdf:rest rdf:nodeID="Nded9be303b31467db2919d4289e4bc46"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#Reglementation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#SubventionPublique">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Subvention"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#PlateformeGestion">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#SystemeIntelligent"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N62d30836a61e4b9db9caa8c9e4d2282d">
+    <rdf:first rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Hydraulique"/>
+    <rdf:rest rdf:nodeID="Na8825e15152843ae89d8325b83dadff6"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nfb1e020c8cbd4b06a319df337ce66f0a">
+    <rdf:first rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Universite"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#GeothermieBasseEnergie">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Geothermique"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#LabelEnergetique">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Label"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nded6f0be13f64fb19f65e302226c188e">
+    <rdf:first rdf:resource="http://www.esprit.tn/ontologies/smartgrid#CreditImpot"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N8121e01892f5410f9046036e5514a39e">
+    <rdf:first rdf:resource="http://www.esprit.tn/ontologies/smartgrid#BasseTension"/>
+    <rdf:rest rdf:nodeID="N0b1387e3f81444208d47308932fbf7de"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N167b9a49997d45918d6fbc9fcf0eefea">
+    <rdf:first rdf:resource="http://www.esprit.tn/ontologies/smartgrid#StationRecharge"/>
+    <rdf:rest rdf:nodeID="Ndd0d7bca00a544999b2f682651adeab8"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N268cc1a9a5994710bd29180938abe3eb">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+    <owl:members rdf:nodeID="Nf17c3c392e6a4378bce71f1c8d0586b1"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N7997abe4295245889d448c4a19b15f16">
+    <rdf:first rdf:resource="http://www.esprit.tn/ontologies/smartgrid#V2GBatiment"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N60263fde5f8d49dd9cb06102d1319c38">
+    <rdf:first rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Clinique"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N3017f210feb047c393915089c8232305">
+    <rdf:first rdf:resource="http://www.esprit.tn/ontologies/smartgrid#InterconnexionNationale"/>
+    <rdf:rest rdf:nodeID="Nd48959042eda49c5a4393a106bdbcd38"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#LigneTransport">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N3352efd1d5b344ec920b1fcb80d78fea">
+    <rdf:first rdf:resource="http://www.esprit.tn/ontologies/smartgrid#CompteurResidentiel"/>
+    <rdf:rest rdf:nodeID="N3f6a077de5f844f7a3355a68a6464aad"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ndf543173746647429edef62c3ae64bdd">
+    <rdf:first rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Vent"/>
+    <rdf:rest rdf:nodeID="N9629a74e58d04c33951561a2fff84fd1"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Na42500f4ea704b8b954934de98397d35">
+    <rdf:first rdf:resource="http://www.esprit.tn/ontologies/smartgrid#BatterieLithium"/>
+    <rdf:rest rdf:nodeID="N030d1ea829f84c39b027d23caa55048c"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N4d090340b78048999e99e581cfedeaf5">
+    <rdf:first rdf:resource="http://www.esprit.tn/ontologies/smartgrid#PlateformeFacturation"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N233a2523ded341cbb72dc55bf030684b">
+    <rdf:first rdf:resource="http://www.esprit.tn/ontologies/smartgrid#GeothermieHauteEnergie"/>
+    <rdf:rest rdf:nodeID="Nab52061cc6194178afdce3199bed84a9"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#Precipitation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#ConditionMeteo"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#SourceProduction">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#Photovoltaique">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Solaire"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N5ac87a2619dc452da5b8c85d6781c181">
+    <rdf:first rdf:resource="http://www.esprit.tn/ontologies/smartgrid#VentFort"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N802b06312a384f20914ebdcde94ba860">
+    <rdf:first rdf:resource="http://www.esprit.tn/ontologies/smartgrid#AlerteSurcharge"/>
+    <rdf:rest rdf:nodeID="N5b88faed8f7e41109125434ab30226ef"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#StationUrbaine">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#StationRecharge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#ConditionMeteo">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#VagueFroid">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Temperature"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nf4af82fcc23449389d131bcd2751caba">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+    <owl:members rdf:nodeID="N17223fffb8b24487b1b6bb077d18c905"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N23ba391489e1420c85d95b74c7bfca40">
+    <rdf:first rdf:resource="http://www.esprit.tn/ontologies/smartgrid#LoiNationale"/>
+    <rdf:rest rdf:nodeID="Nd8a2a7e6560a4f30b0d7d84a31e6861d"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N1299ab6c9b7a43b7b2ff24dc9a6783ca">
+    <rdf:first rdf:resource="http://www.esprit.tn/ontologies/smartgrid#HauteTension"/>
+    <rdf:rest rdf:nodeID="N9685931e3f544614b53ede2d0edbb3e0"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#Thermodynamique">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Solaire"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N5b88faed8f7e41109125434ab30226ef">
+    <rdf:first rdf:resource="http://www.esprit.tn/ontologies/smartgrid#AlertePanne"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N9058f04cbf104d8cbad327ae2597e4f2">
+    <rdf:first rdf:resource="http://www.esprit.tn/ontologies/smartgrid#V2GReseau"/>
+    <rdf:rest rdf:nodeID="N7997abe4295245889d448c4a19b15f16"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#EolienTerrestre">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Eolien"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.esprit.tn/ontologies/smartgrid#PrevisionProduction">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#ModelePrediction"/>
+  </rdf:Description>
+</rdf:RDF>

@@ -1,0 +1,9 @@
+fastapi>=0.110
+uvicorn[standard]>=0.29
+rdflib>=7.0
+python-dotenv>=1.0
+# NLP assistant (no LLM API)
+spacy==3.8.7
+preshed==3.0.10
+cymem==2.0.11
+fr_core_news_sm @ https://github.com/explosion/spacy-models/releases/download/fr_core_news_sm-3.8.0/fr_core_news_sm-3.8.0-py3-none-any.whl
