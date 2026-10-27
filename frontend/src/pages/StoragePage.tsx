@@ -1,5 +1,6 @@
 import { BatteryCharging } from "lucide-react";
 import { EntityManager } from "../components/entities/EntityManager";
+import { PairCell } from "../components/entities/PairCell";
 import type { EntityConfig } from "../components/entities/types";
 import { Badge, Gauge, StatusBadge } from "../components/ui/Badge";
 import { sourcesService, storageService } from "../services/entities";
@@ -45,11 +46,7 @@ const config: EntityConfig<StorageSystem> = {
     { key: "capacite", label: "Capacité", sortable: true, align: "right", render: (s) => formatNumber(s.capacite, "kWh") },
     { key: "tauxCharge", label: "Charge", sortable: true, render: (s) => <Gauge value={s.tauxCharge} /> },
     { key: "puissanceStockage", label: "Puissance", sortable: true, align: "right", render: (s) => formatNumber(s.puissanceStockage, "kW") },
-    {
-      key: "relations",
-      label: "Stocke",
-      render: (s) => <span className="muted">{s.relations.stocke.map((x) => x.nom).join(", ") || "—"}</span>,
-    },
+    { key: "pair", label: "Stocke", hint: "sg:stocke", render: (s) => <PairCell refs={s.relations.stocke} /> },
     { key: "status", label: "Niveau", sortable: true, render: (s) => <StatusBadge status={s.status} /> },
   ],
   statusOptions: [

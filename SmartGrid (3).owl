@@ -209,7 +209,7 @@
   <rdfs:domain rdf:resource="http://www.esprit.tn/ontologies/smartgrid#VehiculeElectrique"/><rdfs:range rdf:resource="http://www.esprit.tn/ontologies/smartgrid#LigneTransport"/></owl:ObjectProperty>
 <owl:ObjectProperty rdf:about="http://www.esprit.tn/ontologies/smartgrid#mesure">
   <owl:inverseOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#estMesurePar"/>
-  <rdfs:domain rdf:resource="http://www.esprit.tn/ontologies/smartgrid#CompteurIntelligent"/><rdfs:range rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Batiment"/></owl:ObjectProperty>
+  <rdfs:domain rdf:resource="http://www.esprit.tn/ontologies/smartgrid#SystemeIntelligent"/><rdfs:range rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Batiment"/></owl:ObjectProperty>
 <owl:ObjectProperty rdf:about="http://www.esprit.tn/ontologies/smartgrid#surveille">
   <rdfs:domain rdf:resource="http://www.esprit.tn/ontologies/smartgrid#CapteurIoT"/><rdfs:range rdf:resource="http://www.esprit.tn/ontologies/smartgrid#LigneTransport"/></owl:ObjectProperty>
 <owl:ObjectProperty rdf:about="http://www.esprit.tn/ontologies/smartgrid#predit">
@@ -223,7 +223,7 @@
 <owl:ObjectProperty rdf:about="http://www.esprit.tn/ontologies/smartgrid#estStockePar"><rdfs:domain rdf:resource="http://www.esprit.tn/ontologies/smartgrid#SourceProduction"/><rdfs:range rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Stockage"/></owl:ObjectProperty>
 <owl:ObjectProperty rdf:about="http://www.esprit.tn/ontologies/smartgrid#recoitDe"><rdfs:domain rdf:resource="http://www.esprit.tn/ontologies/smartgrid#LigneTransport"/><rdfs:range rdf:resource="http://www.esprit.tn/ontologies/smartgrid#SourceProduction"/></owl:ObjectProperty>
 <owl:ObjectProperty rdf:about="http://www.esprit.tn/ontologies/smartgrid#estRechargePar"><rdfs:domain rdf:resource="http://www.esprit.tn/ontologies/smartgrid#VehiculeElectrique"/><rdfs:range rdf:resource="http://www.esprit.tn/ontologies/smartgrid#BorneRecharge"/></owl:ObjectProperty>
-<owl:ObjectProperty rdf:about="http://www.esprit.tn/ontologies/smartgrid#estMesurePar"><rdfs:domain rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Batiment"/><rdfs:range rdf:resource="http://www.esprit.tn/ontologies/smartgrid#CompteurIntelligent"/></owl:ObjectProperty>
+<owl:ObjectProperty rdf:about="http://www.esprit.tn/ontologies/smartgrid#estMesurePar"><rdfs:domain rdf:resource="http://www.esprit.tn/ontologies/smartgrid#Batiment"/><rdfs:range rdf:resource="http://www.esprit.tn/ontologies/smartgrid#SystemeIntelligent"/></owl:ObjectProperty>
 
 <owl:ObjectProperty rdf:about="http://www.esprit.tn/ontologies/smartgrid#influence">
   <owl:inverseOf rdf:resource="http://www.esprit.tn/ontologies/smartgrid#estInfluenceePar"/>

@@ -1,8 +1,9 @@
 import { Car } from "lucide-react";
 import { EntityManager } from "../components/entities/EntityManager";
+import { PairCell } from "../components/entities/PairCell";
 import type { EntityConfig } from "../components/entities/types";
 import { Badge, StatusBadge } from "../components/ui/Badge";
-import { linesService, mobilityService } from "../services/entities";
+import { linesService, mobilityService, regulationsService } from "../services/entities";
 import type { MobilityItem } from "../types";
 import { formatNumber, humanize } from "../utils/format";
 
@@ -48,6 +49,13 @@ const config: EntityConfig<MobilityItem> = {
       families: ["VehiculeElectrique"],
       help: "Vehicle-to-Grid : le véhicule réinjecte de l'énergie dans ces lignes",
     },
+    {
+      key: "reglementations",
+      label: "Réglementations applicables",
+      property: "sg:sAppliqueA",
+      service: regulationsService,
+      help: "Normes, lois ou labels qui s'appliquent à cet équipement (« texte sg:sAppliqueA équipement »)",
+    },
   ],
   columns: [
     {
@@ -79,12 +87,14 @@ const config: EntityConfig<MobilityItem> = {
         return <span className="muted">{links.join(", ") || "—"}</span>;
       },
     },
+    { key: "pair", label: "Réglementations", hint: "sg:sAppliqueA", render: (m) => <PairCell refs={m.relations.reglementations} /> },
     { key: "status", label: "Statut", sortable: true, render: (m) => <StatusBadge status={m.status} /> },
   ],
   statusOptions: [
     { value: "disponible", label: "Disponible" },
     { value: "indisponible", label: "Indisponible" },
   ],
+  nlpDomain: "mobilite",
   summary: (items) => [
     { label: "Équipements", value: String(items.length) },
     { label: "Bornes", value: String(items.filter((m) => m.family === "BorneRecharge").length) },

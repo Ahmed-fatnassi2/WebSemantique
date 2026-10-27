@@ -214,6 +214,7 @@ export function EntityManager<T extends BaseEntity>({ config }: { config: Entity
                           ) : (
                             c.label
                           )}
+                          {c.hint && <code className="th-hint">{c.hint}</code>}
                         </th>
                       ))}
                       <th className="align-right">Actions</th>

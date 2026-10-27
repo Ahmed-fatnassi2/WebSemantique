@@ -1,5 +1,6 @@
 import { Scale } from "lucide-react";
 import { EntityManager } from "../components/entities/EntityManager";
+import { PairCell } from "../components/entities/PairCell";
 import type { EntityConfig } from "../components/entities/types";
 import { Badge, StatusBadge } from "../components/ui/Badge";
 import { buildingsService, mobilityService, regulationsService, sourcesService } from "../services/entities";
@@ -47,13 +48,12 @@ const config: EntityConfig<Regulation> = {
     { key: "organisme", label: "Organisme", sortable: true, render: (r) => r.organisme ?? "—" },
     { key: "dateEntreeVigueur", label: "En vigueur depuis", sortable: true, render: (r) => formatDate(r.dateEntreeVigueur) },
     { key: "dureeValiditeAnnees", label: "Validité", sortable: true, align: "right", render: (r) => formatNumber(r.dureeValiditeAnnees, "ans") },
+    { key: "pair", label: "S'applique à", hint: "sg:sAppliqueA", render: (r) => <PairCell refs={r.relations.sAppliqueA} /> },
     {
       key: "relations",
-      label: "Concerne",
+      label: "Autres liens",
       render: (r) => (
-        <span className="muted">
-          {[...r.relations.encadre, ...r.relations.certifie, ...r.relations.sAppliqueA].map((x) => x.nom).join(", ") || "—"}
-        </span>
+        <span className="muted">{[...r.relations.encadre, ...r.relations.certifie].map((x) => x.nom).join(", ") || "—"}</span>
       ),
     },
     { key: "status", label: "Statut", sortable: true, render: (r) => <StatusBadge status={r.status} /> },

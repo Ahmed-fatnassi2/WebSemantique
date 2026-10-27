@@ -38,11 +38,11 @@ from . import common as cm
 from .common import INTENT_LABELS, Domaine
 from .domaine_batiments import DOMAINE as BATIMENTS
 from .domaine_lignes import DOMAINE as LIGNES
-from .domaine_meteo import DOMAINE as METEO
+from .domaine_mobilite import DOMAINE as MOBILITE
 from .domaine_sources import DOMAINE as SOURCES
 
 SPACY_MODEL = "fr_core_news_sm"
-DOMAINES: dict[str, Domaine] = {d.key: d for d in (SOURCES, BATIMENTS, LIGNES, METEO)}
+DOMAINES: dict[str, Domaine] = {d.key: d for d in (SOURCES, BATIMENTS, LIGNES, MOBILITE)}
 PREFIXES = (
     "PREFIX sg: <http://www.esprit.tn/ontologies/smartgrid#>\n"
     "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n"
@@ -88,7 +88,12 @@ def is_number(token) -> bool:
 
 
 def normalise(token) -> str:
-    return racine(token.lemma_ or token.text, token.pos_)
+    lemma = token.lemma_ or token.text
+    pos = token.pos_
+    # a conjugated verb sometimes tagged as an adjective and left as is: "restituent"
+    if pos == "ADJ" and lemma.lower() == token.text.lower() and len(lemma) > 8 and lemma.lower().endswith("ent"):
+        pos = "VERB"
+    return racine(lemma, pos)
 
 
 # --------------------------------------------------------------- data types
@@ -244,7 +249,11 @@ class DomainAnalyzer:
         spans = []
         for matcher in (self.engine.individual_matcher, self.engine.class_matcher, self.matcher):
             for match_id, start, end in matcher(doc):
-                spans.append(Span(doc, start, end, label=self.engine.nlp.vocab.strings[match_id]))
+                span = Span(doc, start, end, label=self.engine.nlp.vocab.strings[match_id])
+                # a class name never ends with a verb: "bornes rechargent" is not sg:BorneRecharge
+                if span.label_.startswith("CLASS|") and len(span) > 1 and span[-1].pos_ in ("VERB", "AUX"):
+                    continue
+                spans.append(span)
         # Longest match wins ("centrale solaire" beats "centrale", "Ferme Solaire 01" beats both)
         kept = filter_spans(spans)
         out = []
@@ -559,7 +568,7 @@ def fill_slots(g, dom: Domaine, doc: Doc, mentions: list[Mention], question: str
             n.prop = min(slots.properties, key=lambda p: abs(p.start - n.token)).id
         elif n.unit and family == dom.family and n.unit in dom.unit_property:
             n.prop = dom.unit_property[n.unit]
-        elif not n.unit and family == dom.family and n.value.is_integer() and 1800 <= n.value <= 2100:
+        elif dom.year_property and not n.unit and family == dom.family and n.value.is_integer() and 1800 <= n.value <= 2100:
             n.prop = dom.year_property  # "avant 2000" is a year
         else:
             n.prop = _default_property(dom, family)
