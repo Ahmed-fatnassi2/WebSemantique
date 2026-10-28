@@ -1,5 +1,6 @@
 import { CloudSun } from "lucide-react";
 import { EntityManager } from "../components/entities/EntityManager";
+import { PairCell } from "../components/entities/PairCell";
 import type { EntityConfig } from "../components/entities/types";
 import { Badge, StatusBadge } from "../components/ui/Badge";
 import { linesService, sourcesService, weatherService } from "../services/entities";
@@ -64,14 +65,11 @@ const config: EntityConfig<WeatherCondition> = {
     },
     { key: "dureeHeures", label: "Durée", sortable: true, align: "right", render: (w) => formatNumber(w.dureeHeures, "h") },
     { key: "dateReleve", label: "Relevé le", sortable: true, render: (w) => formatDate(w.dateReleve) },
+    { key: "pair", label: "Perturbe", hint: "sg:perturbe", render: (w) => <PairCell refs={w.relations.perturbe} /> },
     {
       key: "relations",
-      label: "Impact",
-      render: (w) => (
-        <span className="muted">
-          {[...w.relations.influence.map((x) => `influence ${x.nom}`), ...w.relations.perturbe.map((x) => `perturbe ${x.nom}`)].join(", ") || "—"}
-        </span>
-      ),
+      label: "Sources influencées",
+      render: (w) => <span className="muted">{w.relations.influence.map((x) => x.nom).join(", ") || "—"}</span>,
     },
     { key: "status", label: "Statut", sortable: true, render: (w) => <StatusBadge status={w.status} /> },
   ],
@@ -79,7 +77,6 @@ const config: EntityConfig<WeatherCondition> = {
     { value: "extreme", label: "Extrême" },
     { value: "normal", label: "Normal" },
   ],
-  nlpDomain: "meteo",
   summary: (items) => [
     { label: "Relevés", value: String(items.length) },
     { label: "Extrêmes", value: String(items.filter((w) => w.status === "extreme").length) },

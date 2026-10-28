@@ -21,10 +21,10 @@ export const NLP_DOMAINS: { key: NlpDomainKey; label: string; path: string; plac
     placeholder: "Ex. Quelles lignes mesurent plus de 50 km ?",
   },
   {
-    key: "meteo",
-    label: "Conditions météo",
-    path: "/weather",
-    placeholder: "Ex. Quelles lignes sont perturbées par le vent ?",
+    key: "mobilite",
+    label: "Mobilité électrique",
+    path: "/mobility",
+    placeholder: "Ex. Quelles bornes ont une puissance supérieure à 50 kW ?",
   },
 ];
 

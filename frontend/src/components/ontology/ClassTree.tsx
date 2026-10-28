@@ -23,6 +23,10 @@ const TREE_GROUPS: { label: string; roots: { id: string; label: string }[] }[] =
       { id: "Reglementation", label: "Réglementation" },
     ],
   },
+  {
+    label: "Application",
+    roots: [{ id: "Utilisateur", label: "Utilisateurs" }],
+  },
 ];
 const ROOT_LABELS = new Map(TREE_GROUPS.flatMap((g) => g.roots.map((r) => [r.id, r.label] as const)));
 

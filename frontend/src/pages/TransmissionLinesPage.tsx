@@ -1,8 +1,9 @@
 import { Cable } from "lucide-react";
 import { EntityManager } from "../components/entities/EntityManager";
+import { PairCell } from "../components/entities/PairCell";
 import type { EntityConfig } from "../components/entities/types";
 import { Badge, StatusBadge } from "../components/ui/Badge";
-import { linesService, sourcesService } from "../services/entities";
+import { linesService, sourcesService, weatherService } from "../services/entities";
 import type { TransmissionLine } from "../types";
 import { formatNumber, humanize } from "../utils/format";
 
@@ -27,6 +28,13 @@ const config: EntityConfig<TransmissionLine> = {
   relations: [
     { key: "connecteeA", label: "Lignes connectées", property: "sg:estConnecteA", service: linesService, help: "Propriété symétrique" },
     { key: "recoitDe", label: "Sources injectant dans la ligne", property: "sg:injecteDans", service: sourcesService, help: "Enregistré sous la forme « source sg:injecteDans ligne »" },
+    {
+      key: "perturbeePar",
+      label: "Perturbée par",
+      property: "sg:estPerturbeePar",
+      service: weatherService,
+      help: "Conditions météo qui perturbent cette ligne (inverse de sg:perturbe)",
+    },
   ],
   columns: [
     {
@@ -54,6 +62,7 @@ const config: EntityConfig<TransmissionLine> = {
         return <span className="muted">{all.join(", ") || "—"}</span>;
       },
     },
+    { key: "pair", label: "Perturbée par", hint: "sg:estPerturbeePar", render: (l) => <PairCell refs={l.relations.perturbeePar} /> },
     { key: "status", label: "État", sortable: true, render: (l) => <StatusBadge status={l.status} /> },
   ],
   statusOptions: [

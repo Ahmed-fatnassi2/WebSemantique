@@ -4,6 +4,9 @@
 - Passwords are never stored: only a PBKDF2-SHA256 hash with a random salt.
 - The token is "<payload>.<signature>": payload = user id + expiry (base64 JSON),
   signature = HMAC-SHA256 with a secret key kept in backend/data/secret.key.
+- Every account is also an individual of the ontology (class sg:Utilisateur, with
+  sg:nom, sg:email, sg:dateInscription), saved in SmartGrid_new.owl so it can be seen
+  in Protégé. The password hash is never written to the ontology.
 """
 from __future__ import annotations
 
@@ -19,8 +22,10 @@ import time
 from datetime import datetime, timezone
 
 from fastapi import Header, HTTPException
+from rdflib import OWL, RDF, RDFS, XSD, Literal
 
 from .config import AUTH_SECRET_PATH, AUTH_TOKEN_DAYS, USERS_PATH
+from .store import SG, store
 
 PBKDF2_ITERATIONS = 200_000
 EMAIL_RE = re.compile(r"^[^@\s]+@[^@\s]+\.[^@\s]+$")
@@ -63,6 +68,54 @@ def _save(users: list[dict]) -> None:
 
 def _public(user: dict) -> dict:
     return {"id": user["id"], "nom": user["nom"], "email": user["email"], "created_at": user["created_at"]}
+
+
+# ------------------------------------------------------------ ontology (OWL)
+
+
+def _ensure_user_schema(g) -> bool:
+    """Class sg:Utilisateur and its properties (added once to the graph)."""
+    changed = False
+    if (SG.Utilisateur, RDF.type, OWL.Class) not in g:
+        g.add((SG.Utilisateur, RDF.type, OWL.Class))
+        g.add((SG.Utilisateur, RDFS.label, Literal("Utilisateur", lang="fr")))
+        g.add((SG.Utilisateur, RDFS.comment, Literal(
+            "Compte de l'application SmartGrid Semantic. Le mot de passe n'est pas stocké dans l'ontologie.", lang="fr")))
+        changed = True
+    for prop, label, rng in (("email", "adresse e-mail", XSD.string), ("dateInscription", "date d'inscription", XSD.dateTime)):
+        p = SG[prop]
+        if (p, RDF.type, OWL.DatatypeProperty) not in g:
+            g.add((p, RDF.type, OWL.DatatypeProperty))
+            g.add((p, RDFS.label, Literal(label, lang="fr")))
+            g.add((p, RDFS.domain, SG.Utilisateur))
+            g.add((p, RDFS.range, rng))
+            changed = True
+    return changed
+
+
+def _add_user_individual(g, user: dict) -> bool:
+    ind = SG[f"Utilisateur_{user['id']}"]
+    if (ind, RDF.type, SG.Utilisateur) in g:
+        return False
+    g.add((ind, RDF.type, OWL.NamedIndividual))
+    g.add((ind, RDF.type, SG.Utilisateur))
+    g.add((ind, SG.nom, Literal(user["nom"], datatype=XSD.string)))
+    g.add((ind, SG.email, Literal(user["email"], datatype=XSD.string)))
+    g.add((ind, SG.dateInscription, Literal(user["created_at"], datatype=XSD.dateTime)))
+    return True
+
+
+def sync_users_to_ontology() -> int:
+    """Make sure every account is in the graph (at startup, after a reset). Returns the number added."""
+    with _lock:
+        users = _load()
+    with store.lock:
+        g = store.graph
+        changed = _ensure_user_schema(g)
+        added = sum(_add_user_individual(g, u) for u in users)
+        if changed or added:
+            store.save()
+    return added
 
 
 # ---------------------------------------------------------------- passwords
@@ -143,6 +196,12 @@ def signup(nom: str, email: str, password: str) -> dict:
         }
         users.append(user)
         _save(users)
+    # The account also becomes an individual of the ontology (sg:Utilisateur), saved in SmartGrid_new.owl
+    with store.lock:
+        _ensure_user_schema(store.graph)
+        _add_user_individual(store.graph, user)
+        store.save()
+        store.log("create", "utilisateur", f"Utilisateur_{user['id']}", f"Compte créé : {user['nom']}")
     return {"token": create_token(user["id"]), "user": _public(user)}
 
 

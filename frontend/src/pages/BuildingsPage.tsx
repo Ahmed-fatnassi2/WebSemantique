@@ -1,8 +1,9 @@
 import { Building2 } from "lucide-react";
 import { EntityManager } from "../components/entities/EntityManager";
+import { PairCell } from "../components/entities/PairCell";
 import type { EntityConfig } from "../components/entities/types";
 import { Badge, StatusBadge } from "../components/ui/Badge";
-import { buildingsService, sourcesService } from "../services/entities";
+import { buildingsService, sourcesService, systemsService } from "../services/entities";
 import type { Building } from "../types";
 import { formatNumber, humanize } from "../utils/format";
 
@@ -31,6 +32,13 @@ const config: EntityConfig<Building> = {
       property: "sg:alimente",
       service: sourcesService,
       help: "Enregistré sous la forme « source sg:alimente bâtiment » (inverse : sg:estAlimentePar)",
+    },
+    {
+      key: "mesurePar",
+      label: "Mesuré par",
+      property: "sg:estMesurePar",
+      service: systemsService,
+      help: "Systèmes intelligents (compteurs, capteurs, plateformes…) qui mesurent ce bâtiment (inverse de sg:mesure)",
     },
   ],
   columns: [
@@ -61,6 +69,7 @@ const config: EntityConfig<Building> = {
       label: "Sources connectées",
       render: (b) => <span className="muted">{b.relations.sources.map((s) => s.nom).join(", ") || "—"}</span>,
     },
+    { key: "pair", label: "Mesuré par", hint: "sg:estMesurePar", render: (b) => <PairCell refs={b.relations.mesurePar} /> },
     { key: "status", label: "Statut", sortable: true, render: (b) => <StatusBadge status={b.status} /> },
   ],
   statusOptions: [

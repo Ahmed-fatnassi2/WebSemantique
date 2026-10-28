@@ -1,4 +1,4 @@
-import { AlertTriangle, Bot, Building2, Cable, CloudSun, Lightbulb, SendHorizontal, Sparkles, Sun, Trash2, User } from "lucide-react";
+import { AlertTriangle, Bot, Building2, Cable, Car, Lightbulb, SendHorizontal, Sparkles, Sun, Trash2, User } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { AnswerCard } from "../components/nlp/NlpAnswer";
@@ -17,7 +17,7 @@ const ICONS: Record<NlpDomainKey, React.ReactNode> = {
   sources: <Sun size={15} />,
   batiments: <Building2 size={15} />,
   lignes: <Cable size={15} />,
-  meteo: <CloudSun size={15} />,
+  mobilite: <Car size={15} />,
 };
 
 interface Turn {
@@ -45,7 +45,7 @@ export default function NlpAssistantPage() {
     sources: [],
     batiments: [],
     lignes: [],
-    meteo: [],
+    mobilite: [],
   });
   const turns = conversations[domain];
   const endRef = useRef<HTMLDivElement>(null);

@@ -23,8 +23,10 @@ app = FastAPI(title=APP_NAME, version=APP_VERSION)
 
 
 @app.on_event("startup")
-def _load_nlp() -> None:
-    # Load spaCy and train the three intent classifiers once, so the first question is fast.
+def _startup() -> None:
+    # Accounts created before this feature are added to the ontology as sg:Utilisateur
+    auth.sync_users_to_ontology()
+    # Load spaCy and train the intent classifiers once, so the first question is fast.
     nlp.warm_up()
 app.add_middleware(
     CORSMiddleware,
@@ -112,6 +114,7 @@ def info():
 @api.post("/system/reset")
 def reset_graph():
     store.reset()
+    auth.sync_users_to_ontology()  # the accounts stay in the ontology after a reset
     return {"status": "ok", "triples": len(store.graph)}
 
 

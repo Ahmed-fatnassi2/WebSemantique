@@ -1,5 +1,6 @@
 import { Cpu } from "lucide-react";
 import { EntityManager } from "../components/entities/EntityManager";
+import { PairCell } from "../components/entities/PairCell";
 import type { EntityConfig } from "../components/entities/types";
 import { Badge, StatusBadge } from "../components/ui/Badge";
 import { buildingsService, linesService, sourcesService, storageService, systemsService } from "../services/entities";
@@ -31,7 +32,6 @@ const config: EntityConfig<SmartSystem> = {
       label: "Bâtiments mesurés",
       property: "sg:mesure",
       service: buildingsService,
-      families: ["CompteurIntelligent"],
       help: "Inverse : sg:estMesurePar",
     },
     { key: "gere", label: "Stockages gérés", property: "sg:gere", service: storageService, families: ["PlateformeGestion"] },
@@ -55,12 +55,13 @@ const config: EntityConfig<SmartSystem> = {
     { key: "protocole", label: "Protocole", sortable: true, render: (s) => s.protocole ?? "—" },
     { key: "precisionMesure", label: "Précision", sortable: true, align: "right", render: (s) => formatNumber(s.precisionMesure, "%") },
     { key: "dateInstallation", label: "Installé le", sortable: true, render: (s) => formatDate(s.dateInstallation) },
+    { key: "pair", label: "Mesure", hint: "sg:mesure", render: (s) => <PairCell refs={s.relations.mesure} /> },
     {
       key: "relations",
-      label: "Cible",
+      label: "Autres liens",
       render: (s) => (
         <span className="muted">
-          {[...s.relations.surveille, ...s.relations.mesure, ...s.relations.gere, ...s.relations.predit].map((x) => x.nom).join(", ") || "—"}
+          {[...s.relations.surveille, ...s.relations.gere, ...s.relations.predit].map((x) => x.nom).join(", ") || "—"}
         </span>
       ),
     },

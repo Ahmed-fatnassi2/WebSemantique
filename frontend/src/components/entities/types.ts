@@ -25,6 +25,8 @@ export interface RelationConfig {
   help?: string;
   /** Only for these second-level classes (rdfs:domain of the property), e.g. ["BorneRecharge"]. */
   families?: string[];
+  /** Only propose targets of these second-level classes (rdfs:range), e.g. ["CompteurIntelligent"]. */
+  optionFamilies?: string[];
 }
 
 export interface ColumnConfig<T> {
@@ -33,6 +35,8 @@ export interface ColumnConfig<T> {
   sortable?: boolean;
   align?: "right";
   render: (item: T) => ReactNode;
+  /** Small text under the title, e.g. the OWL property of a relation column. */
+  hint?: string;
 }
 
 export interface EntityConfig<T extends BaseEntity> {
