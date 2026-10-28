@@ -262,7 +262,7 @@ def network() -> dict:
         canonical = {}
         for p, q in g.subject_objects(OWL.inverseOf):
             canonical[q] = p
-        inds = all_individuals(g)
+        inds = [i for i in all_individuals(g) if (i, RDF.type, SG.Utilisateur) not in g]
         ind_set = set(inds)
         nodes = []
         for ind in inds:

@@ -359,7 +359,7 @@ export interface NlpAnalysis {
 }
 
 /** One NLP assistant per domain (membre 1, 2, 3). */
-export type NlpDomainKey = "sources" | "batiments" | "lignes" | "meteo";
+export type NlpDomainKey = "sources" | "batiments" | "lignes" | "mobilite";
 
 export interface NlpResponse {
   question: string;

@@ -162,7 +162,10 @@ SPECS: dict[str, EntitySpec] = {
             Field("anneeConstruction", XSD.int, min=1000, max=2100),
             Field("classeEnergetique", XSD.string, choices=ENERGY_CLASSES),
         ],
-        relations=[Relation("sources", SG.alimente, SG.SourceProduction, "in")],
+        relations=[
+            Relation("sources", SG.alimente, SG.SourceProduction, "in"),
+            Relation("mesurePar", SG.mesure, SG.SystemeIntelligent, "in"),
+        ],
         status=_building_status,
         search_fields=["nom", "adresse"],
     ),
@@ -182,6 +185,7 @@ SPECS: dict[str, EntitySpec] = {
         relations=[
             Relation("connecteeA", SG.estConnecteA, SG.LigneTransport, "sym"),
             Relation("recoitDe", SG.injecteDans, SG.SourceProduction, "in"),
+            Relation("perturbeePar", SG.perturbe, SG.ConditionMeteo, "in"),
         ],
         status=_line_status,
     ),
@@ -202,6 +206,7 @@ SPECS: dict[str, EntitySpec] = {
             Relation("recharge", SG.recharge, SG.VehiculeElectrique, "out"),
             Relation("raccordeeA", SG.estRaccordeeA, SG.LigneTransport, "out"),
             Relation("restitueA", SG.restitueA, SG.LigneTransport, "out"),
+            Relation("reglementations", SG.sAppliqueA, SG.Reglementation, "in"),
         ],
         status=_bool_status("disponible", "disponible", "indisponible"),
         search_fields=["nom", "typeConnecteur"],

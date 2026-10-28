@@ -57,7 +57,10 @@ function RelationPicker({
   }, [relation.service]);
 
   const visible = (options ?? []).filter(
-    (o) => o.id !== excludeId && `${o.nom} ${o.id}`.toLowerCase().includes(filter.toLowerCase()),
+    (o) =>
+      o.id !== excludeId &&
+      (!relation.optionFamilies || (o.family !== null && relation.optionFamilies.includes(o.family))) &&
+      `${o.nom} ${o.id}`.toLowerCase().includes(filter.toLowerCase()),
   );
   const toggle = (id: string) =>
     onChange(selected.includes(id) ? selected.filter((x) => x !== id) : [...selected, id]);

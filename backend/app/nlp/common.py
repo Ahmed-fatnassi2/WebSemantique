@@ -21,7 +21,7 @@ class Domaine:
     statuses: list[tuple[str, str, object]]
     unit_property: dict[str, str]  # unit -> property when no property word is written
     default_property: str  # measure used by "le plus", "total"… without a property word
-    year_property: str  # property compared to a year ("avant 2000")
+    year_property: str | None  # property compared to a year ("avant 2000"), None if the table has no date
     training: dict[str, list[str]]  # intent -> example questions (spaCy classifier)
     examples: list[str]  # shown in the interface
     # "le plus ancien" = smallest year: words that reverse the superlative order
@@ -73,6 +73,7 @@ UNITS: dict[str, tuple[str, float]] = {
     # weather
     "km/h": ("km/h", 1), "°c": ("°C", 1), "degre": ("°C", 1), "degres": ("°C", 1), "mm": ("mm", 1),
     "w/m2": ("W/m²", 1), "h": ("h", 1), "heure": ("h", 1), "heures": ("h", 1),
+    "min": ("min", 1), "minute": ("min", 1), "minutes": ("min", 1),
     # money (subsidies)
     "dt": ("DT", 1), "tnd": ("DT", 1), "dinar": ("DT", 1), "dinars": ("DT", 1),
 }
@@ -93,6 +94,17 @@ EXTRA_CLASS_WORDS: dict[str, list[str]] = {
     "PlateformeGestion": ["plateforme"],
     "ModelePrediction": ["modèle de prévision", "modèle de prédiction"],
     "SystemeAlerte": ["alerte"],
+    "ConditionMeteo": ["condition météo", "météo", "condition climatique", "phénomène météo"],
+    "Ensoleillement": ["ensoleillement", "soleil", "rayonnement"],
+    "Precipitation": ["précipitation"],
+    "Pluie": ["pluie"],
+    "Neige": ["neige"],
+    "Temperature": ["température"],
+    "Canicule": ["canicule", "vague de chaleur"],
+    "VagueFroid": ["vague de froid"],
+    "Vent": ["vent"],
+    "VentFort": ["vent fort", "tempête"],
+    "Humidite": ["humidité"],
     "Reglementation": ["réglementation", "règlementation", "texte réglementaire"],
     "Label": ["label"],
     "Loi": ["loi"],

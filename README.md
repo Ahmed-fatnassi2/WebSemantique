@@ -20,7 +20,7 @@ web semantique/
 │   │   │   ├── domaine_sources.py    # assistant 1 : vocabulaire + questions d'entraînement des sources
 │   │   │   ├── domaine_batiments.py  # assistant 2 : bâtiments
 │   │   │   ├── domaine_lignes.py     # assistant 3 : lignes de transport
-│   │   │   └── domaine_meteo.py      # assistant 4 : conditions météo
+│   │   │   └── domaine_mobilite.py   # assistant 4 : mobilité électrique
 │   │   └── dashboard.py
 │   ├── requirements.txt
 └── frontend/                # React + TypeScript + Vite
@@ -58,15 +58,15 @@ L'URL de l'API se règle dans `frontend/.env` : `VITE_API_BASE_URL=http://localh
 
 - **Comptes (connexion / inscription)** : toutes les pages et toutes les routes de l'API (sauf `/api/health` et `/api/auth/*`) demandent d'être connecté. Les comptes sont enregistrés dans `backend/data/users.json`. Les mots de passe ne sont jamais stockés en clair : seul un hachage PBKDF2-SHA256 salé (200 000 itérations) est conservé. Après connexion, le backend renvoie un jeton signé (HMAC-SHA256, valable 7 jours, clé dans `backend/data/secret.key`) que le frontend envoie dans l'en-tête `Authorization: Bearer …`. En mode démo (backend injoignable), l'application reste consultable sans compte.
 - **Persistance** : le fichier OWL n'est jamais modifié. Toute création, modification, suppression ou requête SPARQL UPDATE est enregistrée immédiatement dans **`SmartGrid_new.owl`** (RDF/XML, à côté du fichier d'origine, ouvrable dans Protégé). Au démarrage, le backend charge `SmartGrid_new.owl` s'il existe, sinon le fichier d'origine. *Paramètres → Réinitialiser* supprime `SmartGrid_new.owl` et recharge l'ontologie d'origine.
-- **Huit tables CRUD**, une par famille de l'ontologie : Sources de production, Stockage, Bâtiments, Lignes de transport, Mobilité électrique, Systèmes intelligents, Conditions météo et Réglementation. Les relations proposées dans le formulaire dépendent de la classe choisie et sont vérifiées par le backend avec le `rdfs:domain` de la propriété (ex. `sg:mesure` seulement pour un compteur).
-- **Quatre assistants NLP, uniquement avec spaCy (sans API de LLM)** : un assistant par domaine, utilisable dans la page *Assistant NLP* (un onglet par domaine) et dans la boîte « Demander en français » sous le tableau des pages Sources, Bâtiments, Lignes et Conditions météo.
+- **Huit tables CRUD**, une par famille de l'ontologie : Sources de production, Stockage, Bâtiments, Lignes de transport, Mobilité électrique, Systèmes intelligents, Conditions météo et Réglementation. Les relations proposées dans le formulaire dépendent de la classe choisie et sont vérifiées par le backend avec le `rdfs:domain` de la propriété (ex. `sg:surveille` seulement pour un capteur).
+- **Quatre assistants NLP, uniquement avec spaCy (sans API de LLM)** : un assistant par domaine, utilisable dans la page *Assistant NLP* (un onglet par domaine) et dans la boîte « Demander en français » sous le tableau des pages Sources, Bâtiments, Lignes et Mobilité électrique.
 
   | Assistant | Fichier | Domaine de l'ontologie |
   |---|---|---|
   | Sources de production | `backend/app/nlp/domaine_sources.py` | `sg:SourceProduction` (+ relations `alimente`, `injecteDans`, `stocke`) |
   | Bâtiments | `backend/app/nlp/domaine_batiments.py` | `sg:Batiment` (+ relation `alimente`, classe énergétique) |
   | Lignes de transport | `backend/app/nlp/domaine_lignes.py` | `sg:LigneTransport` (+ relations `estConnecteA`, `injecteDans`, état de la ligne) |
-  | Conditions météo | `backend/app/nlp/domaine_meteo.py` | `sg:ConditionMeteo` (+ relations `influence`, `perturbe`, régions, phénomènes extrêmes) |
+  | Mobilité électrique | `backend/app/nlp/domaine_mobilite.py` | `sg:MobiliteElectrique` (+ relations `recharge`, `estRaccordeeA`, `restitueA`, disponibilité, connecteurs) |
 
   Chaque fichier de domaine contient son vocabulaire (synonymes français des classes, propriétés et relations), ses mots de statut, ses unités et ses 93 questions d'entraînement. Le moteur commun (`core.py`) fait :
   1. **spaCy** (`fr_core_news_sm`) : tokenisation, lemmatisation, étiquetage morpho-syntaxique, analyse en dépendances ;

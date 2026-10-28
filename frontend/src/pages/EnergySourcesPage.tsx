@@ -1,8 +1,9 @@
 import { Sun } from "lucide-react";
 import { EntityManager } from "../components/entities/EntityManager";
+import { PairCell } from "../components/entities/PairCell";
 import type { EntityConfig } from "../components/entities/types";
 import { Badge, StatusBadge } from "../components/ui/Badge";
-import { buildingsService, linesService, sourcesService } from "../services/entities";
+import { buildingsService, linesService, sourcesService, storageService } from "../services/entities";
 import type { EnergySource } from "../types";
 import { formatNumber, humanize } from "../utils/format";
 import { familyColor } from "../utils/labels";
@@ -28,6 +29,13 @@ const config: EntityConfig<EnergySource> = {
   relations: [
     { key: "alimente", label: "Bâtiments alimentés", property: "sg:alimente", service: buildingsService },
     { key: "injecteDans", label: "Lignes d'injection", property: "sg:injecteDans", service: linesService },
+    {
+      key: "stockeePar",
+      label: "Stockée par",
+      property: "sg:estStockePar",
+      service: storageService,
+      help: "Systèmes de stockage qui stockent l'énergie de cette source (inverse de sg:stocke)",
+    },
   ],
   columns: [
     {
@@ -58,6 +66,7 @@ const config: EntityConfig<EnergySource> = {
           <span className="muted">—</span>
         ),
     },
+    { key: "pair", label: "Stockée par", hint: "sg:estStockePar", render: (s) => <PairCell refs={s.relations.stockeePar} /> },
     { key: "status", label: "Statut", sortable: true, render: (s) => <StatusBadge status={s.status} /> },
   ],
   statusOptions: [

@@ -19,6 +19,7 @@ import {
   TriangleAlert,
   X,
   Zap,
+  type LucideIcon,
 } from "lucide-react";
 import { Suspense, useEffect, useState } from "react";
 import { NavLink, Outlet, useLocation } from "react-router-dom";
@@ -27,7 +28,14 @@ import { useBackend } from "../../context/BackendContext";
 import { Button } from "../ui/Button";
 import { Loader } from "../ui/States";
 
-const NAV = [
+interface NavGroup {
+  section: string;
+  /** Relation linking the two tables of a pair */
+  relation?: string;
+  items: { to: string; label: string; icon: LucideIcon; end?: boolean }[];
+}
+
+const NAV: NavGroup[] = [
   {
     section: "Supervision",
     items: [
@@ -35,21 +43,36 @@ const NAV = [
       { to: "/grid", label: "Explorateur Smart Grid", icon: Network },
     ],
   },
+  // The 8 tables, by pairs of related classes (the relation is shown in the section title)
   {
-    section: "Gestion du réseau",
+    section: "Production · stockage",
+    relation: "sg:stocke",
     items: [
       { to: "/sources", label: "Sources de production", icon: Sun },
       { to: "/storage", label: "Stockage", icon: BatteryCharging },
+    ],
+  },
+  {
+    section: "Bâtiments · supervision",
+    relation: "sg:mesure",
+    items: [
       { to: "/buildings", label: "Bâtiments", icon: Building2 },
-      { to: "/lines", label: "Lignes de transport", icon: Cable },
-      { to: "/mobility", label: "Mobilité électrique", icon: Car },
       { to: "/systems", label: "Systèmes intelligents", icon: Cpu },
     ],
   },
   {
-    section: "Contexte",
+    section: "Transport · météo",
+    relation: "sg:perturbe",
     items: [
+      { to: "/lines", label: "Lignes de transport", icon: Cable },
       { to: "/weather", label: "Conditions météo", icon: CloudSun },
+    ],
+  },
+  {
+    section: "Mobilité · réglementation",
+    relation: "sg:sAppliqueA",
+    items: [
+      { to: "/mobility", label: "Mobilité électrique", icon: Car },
       { to: "/regulations", label: "Réglementation", icon: Scale },
     ],
   },
@@ -148,7 +171,9 @@ export function Layout() {
         <nav>
           {NAV.map((group) => (
             <div key={group.section} className="nav-group">
-              <span className="nav-section">{group.section}</span>
+              <span className="nav-section" title={group.relation ? `Relation : ${group.relation}` : undefined}>
+                {group.section}
+              </span>
               {group.items.map(({ to, label, icon: Icon, end }) => (
                 <NavLink key={to} to={to} end={end} className={({ isActive }) => `nav-link ${isActive ? "active" : ""}`}>
                   <Icon size={18} />
